@@ -1,0 +1,34 @@
+{
+  "name": "pva2_prednasky",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.2",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "shiki": "latest",
+    "vue": "^3.4.27"
+  },
+  "version": "1.0.0",
+  "description": "To start the slide show:",
+  "main": "index.js",
+  "devDependencies": {
+    "playwright-chromium": "^1.44.0",
+    "prettier": "latest"
+  },
+  "keywords": [
+    "python",
+    "pva",
+    "prednasky",
+    "vyuka",
+    "oa",
+    "oaopava"
+  ],
+  "author": "Adam Fišer",
+  "license": "ISC"
+}
