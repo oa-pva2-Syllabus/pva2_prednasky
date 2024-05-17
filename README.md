@@ -11,6 +11,6 @@ Edit the [slides.md](./slides.md) to see the changes.
 Learn more about Slidev on [documentations](https://sli.dev/).
 
 
-slidev --entry slides\01_uvod_do_python.md 
-monochrome icons
+- `slidev --entry slides\01_uvod_do_python.md` 
+- `monochrome icons`
 
