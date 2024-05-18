@@ -32,14 +32,13 @@ export:
   timeout: 30000
   dark: false
   withClicks: false
-  withToc: true
 # controls whether texts in slides are selectable
 selectable: false
 codeCopy: false
 download: true
 
 exportFilename: "01_uvod_do_python"
-titleTemplate: 'PVA2 %s by Adam Fišer'
+titleTemplate: "PVA2 %s by Adam Fišer"
 title: "01 Úvod do Python"
 info: |
   ## PVA2 Programování a vývoj aplikací
@@ -148,7 +147,6 @@ if 5 > 2:
 
 
 ---
-#Komentare
 layout: two-cols-header
 ---
 
