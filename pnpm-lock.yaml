@@ -14,28 +14,23 @@ importers:
       '@slidev/theme-default':
         specifier: latest
         version: 0.25.0
-      shiki:
-        specifier: latest
-        version: 1.6.0
-      vue:
-        specifier: ^3.4.27
-        version: 3.4.27(typescript@5.4.5)
     devDependencies:
       playwright-chromium:
         specifier: ^1.44.0
         version: 1.44.0
       plop:
-        specifier: ^4.0.1
+        specifier: ^4.0.0
         version: 4.0.1
-      pnpm:
-        specifier: ^9.1.1
-        version: 9.1.1
-      prettier:
-        specifier: latest
-        version: 3.2.5
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
+      shiki:
+        specifier: latest
+        version: 1.6.0
+
+  pva2/01_uvod_do_python/src: {}
+
+  pva2/02_input_konverze_text/src: {}
 
 packages:
 
@@ -2606,11 +2601,6 @@ packages:
   plop@4.0.1:
     resolution: {integrity: sha512-5n8QU93kvL/ObOzBcPAB1siVFtAH1TZM6TntJ3JK5kXT0jIgnQV+j+uaOWWFJlg1cNkzLYm8klgASF65K36q9w==}
     engines: {node: '>=18'}
-    hasBin: true
-
-  pnpm@9.1.1:
-    resolution: {integrity: sha512-FOkVdZwR936sB/q6TQGcGT7IY3Ip5i7Jnu+3zzw7dcZER4grfEhRQkUe46a0CAWc37e3+gNBuXXxLQ92KccRlQ==}
-    engines: {node: '>=18.12'}
     hasBin: true
 
   points-on-curve@0.2.0:
@@ -6552,8 +6542,6 @@ snapshots:
       node-plop: 0.32.0
       ora: 8.0.1
       v8flags: 4.0.1
-
-  pnpm@9.1.1: {}
 
   points-on-curve@0.2.0: {}
 
