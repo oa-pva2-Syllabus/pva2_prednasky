@@ -1,53 +1,70 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# apply any unocss classes to the current slide
-class: text-white
+#== Layout
+theme: default
+background: https://cover.sli.dev # https://unsplash.com/collections/94734566/slidev
+transition: slide-left #https://sli.dev/guide/animations#slide-transitions
+mdc: true # https://sli.dev/guide/syntax#mdc-syntax
+selectable: false
+codeCopy: false
+download: true
 hideInToc: true
-fonts:
 
-  mono: "Fira Code"
-author: "AdamFiser"
-authorUrl: https://github.com/AdamFiser
-# https://sli.dev/custom/highlighters.html
+#== Code Highlighter
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: true
-# https://sli.dev/guide/drawing
+
+#== Dravings https://sli.dev/guide/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations#slide-transitions
-transition: slide-left
-# enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
-mdc: true
 
-# export options
-# use export CLI options in camelCase format
-# Learn more: https://sli.dev/guide/exporting.html
+#== Export Configuration
+# use export CLI options in camelCase format https://sli.dev/guide/exporting.html
 export:
   format: pdf
   timeout: 30000
   dark: false
   withClicks: false
-# controls whether texts in slides are selectable
-selectable: false
-codeCopy: false
-download: true
 
+#== Slide Info
+title: "01 Úvod do Python"
 exportFilename: "01_uvod_do_python"
 titleTemplate: "PVA2 %s by Adam Fišer"
-title: "01 Úvod do Python"
 info: |
   ## PVA2 Programování a vývoj aplikací
-  #### 01 {title}
 
   Určeno pouze pro výukové účely
+  
+  [Repository](https://github.com/OA-PVA2-Syllabus/pva2_prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
-src: ./pages/header.md
+---
+
+## PVA2 Programování a vývoj aplikací
+
+{{ title }}
+
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    01. Úvod do Python <carbon:arrow-right class="inline" />
+  </span>
+</div>
+
+
+
+<a href="https://github.com/AdamFiser" target="_blank" alt="GitHub"
+  class="abs-bl m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white"><carbon-logo-github /> Adam</a>
+[Adam Fišer](https://www.wanex.cz/)
+
+
+<div class="abs-br mr-6 mb-12">
+    <span
+      @click="$slidev.nav.next"
+      class="arrow-container cursor-pointer slidev-icon-btn opacity-50 !border-none !hover:text-white"
+    >
+      <carbon:chevron-right class="inline" />
+    </span>
+</div>
+
 ---
 layout: default
 ---
@@ -109,12 +126,12 @@ praktická ukázka
 # Na každém znaku záleží
 ## Česká klávesnice
 
-<img src="/images/klavesnice_cs.png" />
+<img src="/klavesnice_cs.png" />
 
 ---
 
 ## Anglická klávesnice
-<img src="/images/klavesnice_en.png" />
+<img src="/klavesnice_en.png" />
 
 ---
 

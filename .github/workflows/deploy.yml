@@ -1,4 +1,4 @@
-﻿name: Deploy pages to Github Pages
+﻿name: CD Deploy pages to Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -30,18 +30,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm i
 
-      - name: Install slidev
-        run:  npm i -g @slidev/cli
+      #- name: Install slidev
+      #  run:  npm i -g @slidev/cli
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Build
-        run: slidev build --base /pva2_prednasky/
+        run: pnpm build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

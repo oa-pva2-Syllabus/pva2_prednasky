@@ -10,7 +10,12 @@ from = "/.well-known/*"
 to = "/.well-known/:splat"
 status = 200
 
+#[[redirects]]
+#from = "/*"
+#to = "/index.html"
+#status = 200
+
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/pva2/01_uvod_do_python/*"
+  to = "/pva2/01_uvod_do_python/index.html"
+  status = 200
