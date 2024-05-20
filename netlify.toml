@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run build"
+command = "pnpm run build"
 
 [build.environment]
 NODE_VERSION = "20"
@@ -18,4 +18,9 @@ status = 200
 [[redirects]]
   from = "/pva2/01_uvod_do_python/*"
   to = "/pva2/01_uvod_do_python/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pva2/02_input_konverze_text/*"
+  to = "/pva2/02_input_konverze_text/index.html"
   status = 200
