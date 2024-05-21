@@ -27,6 +27,9 @@ importers:
       shiki:
         specifier: latest
         version: 1.6.0
+      zx:
+        specifier: ^8.1.0
+        version: 8.1.0
 
   pva2/01_uvod_do_python/src: {}
 
@@ -634,6 +637,9 @@ packages:
   '@types/fined@1.1.5':
     resolution: {integrity: sha512-2N93vadEGDFhASTIRbizbl4bNqpMOId5zZfj6hHqYZfEzEfO9onnU4Im8xvzo8uudySDveDHBOOSlTWf38ErfQ==}
 
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
+
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
@@ -642,6 +648,9 @@ packages:
 
   '@types/inquirer@9.0.7':
     resolution: {integrity: sha512-Q0zyBupO6NxGRZut/JdmqYKOnN95Eg5V8Csg3PGKkP+FnvsUZx1jAyK7fztIszxxMuoBA6E3KXWvdZVXIpx60g==}
+
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
   '@types/liftoff@4.0.3':
     resolution: {integrity: sha512-UgbL2kR5pLrWICvr8+fuSg0u43LY250q7ZMkC+XKC3E+rs/YBDEnQIzsnhU5dYsLlwMi3R75UvCL87pObP1sxw==}
@@ -3318,6 +3327,11 @@ packages:
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
+  zx@8.1.0:
+    resolution: {integrity: sha512-2BCoOK6JTWikAkwPCV2dFr+1ou29WoY+6XltLu+Ou9dvxrqm/p+HuHCgBtMRMIVFexQzUSGfB5VbYeY8XmGBPQ==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
+
 snapshots:
 
   '@ampproject/remapping@2.3.0':
@@ -4113,6 +4127,12 @@ snapshots:
 
   '@types/fined@1.1.5': {}
 
+  '@types/fs-extra@11.0.4':
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 20.12.12
+    optional: true
+
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.2
@@ -4123,6 +4143,11 @@ snapshots:
     dependencies:
       '@types/through': 0.0.33
       rxjs: 7.8.1
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 20.12.12
+    optional: true
 
   '@types/liftoff@4.0.3':
     dependencies:
@@ -7308,3 +7333,8 @@ snapshots:
   zhead@2.2.4: {}
 
   zwitch@2.0.4: {}
+
+  zx@8.1.0:
+    optionalDependencies:
+      '@types/fs-extra': 11.0.4
+      '@types/node': 20.12.12
