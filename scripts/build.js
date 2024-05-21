@@ -13,6 +13,29 @@ const talksFiles = await fs.readdir(TALKS_PATH, { withFileTypes: true });
 
 const execPromise = promisify(exec);
 
+// Vytvoříme adresář "dist"
+const dir = path.join(process.cwd(), 'dist');
+
+fs.readdir(process.cwd(), (err, files) => {
+  if (err) {
+    console.error('Chyba při čtení adresáře:', err);
+    return;
+  }
+
+  if (!files.includes('dist')) {
+    fs.mkdir(dir, (err) => {
+      if (err) {
+        console.error('Chyba při vytváření adresáře:', err);
+      } else {
+        console.log('Adresář "dist" byl úspěšně vytvořen.');
+      }
+    });
+  } else {
+    console.log('Adresář "dist" již existuje.');
+  }
+});
+
+
 console.log( "📃 build slides ...");
 for (const file of talksFiles) {
 
