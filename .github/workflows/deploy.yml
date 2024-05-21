@@ -1,4 +1,4 @@
-﻿name: CD Deploy pages to Github Pages
+﻿﻿name: CD Deploy pages to Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -35,7 +35,8 @@ jobs:
           node-version: 'lts/*'
           cache: "pnpm"
 
-
+      - name: Install dependencies
+        run: pnpm i
 
       #- name: Install slidev
       #  run:  npm i -g @slidev/cli
@@ -43,13 +44,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Install dependencies
-        run: pnpm i
-
       - name: Build
         run: pnpm build
-        env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
