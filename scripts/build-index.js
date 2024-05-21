@@ -24,7 +24,7 @@ for (const file of talksFiles) {
   }
 }
 
-const createLinkList = (talks) => talks.map(talk => `<li><a href="./${talk.path}">${talk.title} by ${talk.author.name}</a></li>`).join('');
+const createLinkList = (talks) => talks.map(talk => `<li><a href="./pva2/${talk.path}">${talk.title}</a> | <a href="./pva2/${talk.path}">prezentace</a> | <a href="./pva2/${talk.path}/${talk.title}.pdf">PDF</a></li>`).join('');
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 <html lang="cs">
   <head>
@@ -34,7 +34,7 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <img src="https://www.wanex.cz/wp-content/uploads/2013/01/logo.png" alt="Wanex logo" />
+    <img src="logo.png" alt="Wanex logo" />
     <h1>Přednášky</h1>
     <ul>
       ${createLinkList(talks.reverse())}
