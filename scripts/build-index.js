@@ -34,7 +34,7 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <img src="logo.png" alt="Wanex logo" />
+    <img src="https://www.wanex.cz/wp-content/uploads/2013/01/logo.png" alt="Wanex logo" />
     <h1>Přednášky</h1>
     <ul>
       ${createLinkList(talks.reverse())}
