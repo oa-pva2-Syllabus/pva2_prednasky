@@ -30,7 +30,7 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our internal talks</title>
+    <title>Přednášky</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
