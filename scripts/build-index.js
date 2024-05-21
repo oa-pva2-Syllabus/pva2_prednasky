@@ -24,7 +24,7 @@ for (const file of talksFiles) {
   }
 }
 
-const createLinkList = (talks) => talks.map(talk => `<li><a href="./pva2/${talk.path}">${talk.title}</a> | <a href="./pva2/${talk.path}">prezentace</a> | <a href="./pva2/${talk.path}/${talk.title}.pdf">PDF</a></li>`).join('');
+const createLinkList = (talks) => talks.map(talk => `<li><a href="./pva2/${talk.path}">${talk.title}</a> | <a href="./pva2/${talk.path}">prezentace</a> | <a href="./pva2/${talk.path}/${talk.path}.pdf">PDF</a></li>`).join('');
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 <html lang="cs">
   <head>
