@@ -10,17 +10,15 @@
     "generate": "plop"
   },
   "dependencies": {
-    "@slidev/cli": "^0.49.2",
+    "@slidev/cli": "^0.47.5",
     "@slidev/theme-default": "latest"
   },
   "packageManager": "pnpm@9.1.1",
   "devDependencies": {
     "shiki": "latest",
     "playwright": "^1.44.0",
-    "playwright-chromium": "^1.44.0",
     "rimraf": "^5.0.7",
-    "plop": "^4.0.0",
-    "zx": "^8.1.0"
+    "plop": "^4.0.0"
 
   },
   "keywords": [

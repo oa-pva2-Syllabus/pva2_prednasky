@@ -1,3 +1,5 @@
+global-botttom.vue
+
 <template>
   <footer
     v-if="
@@ -8,7 +10,7 @@
     class="absolute bottom-0 left-1 p-2 text-sm w-full"
   >
     <div class="flex">
-      <div>
+      <div>BHVPKC-Dispo
         Adam Fišer
       </div>
       <div class="flex-grow">&nbsp;</div>
