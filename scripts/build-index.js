@@ -9,8 +9,7 @@ const talks = [];
 const talksFiles = await fs.readdir(TALKS_PATH, { withFileTypes: true });
 
 
-
-
+console.log( "📃 build index ...");
 
 for (const file of talksFiles) {
   if (file.isDirectory()) {
@@ -44,3 +43,4 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 `);
 
 await fs.copyFile(path.join(PUBLIC_PATH, 'styles.css'), path.join(OUTPUT_PATH, 'styles.css'));
+await fs.copyFile(path.join(PUBLIC_PATH, 'logo.png'), path.join(OUTPUT_PATH, 'logo.png'));
