@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const TALKS_PATH = 'pva2/';
+const TALKS_PATH = 'slides/';
 const OUTPUT_PATH = 'dist';
 const PUBLIC_PATH = 'public/';
 const talks = [];
@@ -14,7 +14,7 @@ console.log( "📃 build index ...");
 for (const file of talksFiles) {
   if (file.isDirectory()) {
     try {
-      const rawPackageJson = await fs.readFile(path.join(file.path, file.name, 'src/package.json'));
+      const rawPackageJson = await fs.readFile(path.join(file.path, file.name, 'package.json'));
       const packageJson = JSON.parse(rawPackageJson.toString());
       talks.push({path: file.name, title: packageJson.title, author: packageJson.author});
     } catch (err) {
@@ -23,7 +23,7 @@ for (const file of talksFiles) {
   }
 }
 
-const createLinkList = (talks) => talks.map(talk => `<li><a href="./pva2/${talk.path}">${talk.title}</a> | <a href="./pva2/${talk.path}">prezentace</a> | <a href="./pva2/${talk.path}/${talk.path}.pdf">PDF</a></li>`).join('');
+const createLinkList = (talks) => talks.map(talk => `<li><a href="./${talk.path}">${talk.title}</a> | <a href="./${talk.path}">prezentace</a> | <a href="./${talk.path}/${talk.path}.pdf">PDF</a></li>`).join('');
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 <html lang="cs">
   <head>

@@ -7,8 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /pva2/01_uvod_do_python/ --out ../../../dist/pva2/01_uvod_do_python",
-    "buildback": "slidev build --base /pva2/01_uvod_do_python/src/ --out ../../../dist/pva2/01_uvod_do_python",
+    "build": "slidev build",
     "export": "slidev export --output ../01_uvod_do_python.pdf"
   }
 }

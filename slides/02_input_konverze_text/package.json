@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /pva2/02_input_konverze_text/ --out ../../../dist/pva2/02_input_konverze_text",
+    "build": "slidev build",
     "export": "slidev export --output ../02_input_konverze_text.pdf"
   }
 }

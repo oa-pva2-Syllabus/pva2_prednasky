@@ -1,54 +1,64 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+#!/usr/bin/env zx
+import fg from "fast-glob";
+import fs from "fs";
+import fse from "fs-extra";
+import path from "path";
+import "zx/globals";
+import {rimraf} from "rimraf";
 
-import { exec } from 'child_process';
-import { promisify } from 'util';
-
-const TALKS_PATH = 'pva2/';
-const OUTPUT_PATH = 'dist';
-const PUBLIC_PATH = 'public/';
-const talks = [];
-
-const talksFiles = await fs.readdir(TALKS_PATH, { withFileTypes: true });
-
-const execPromise = promisify(exec);
-
-// Vytvoříme adresář "dist"
-const dir = path.join(process.cwd(), 'dist');
-
-fs.readdir(process.cwd(), (err, files) => {
-  if (err) {
-    console.error('Chyba při čtení adresáře:', err);
-    return;
-  }
-
-  if (!files.includes('dist')) {
-    fs.mkdir(dir, (err) => {
-      if (err) {
-        console.error('Chyba při vytváření adresáře:', err);
-      } else {
-        console.log('Adresář "dist" byl úspěšně vytvořen.');
-      }
-    });
-  } else {
-    console.log('Adresář "dist" již existuje.');
-  }
+const rootDir = path.resolve(__dirname, "../");
+const slidesDir = path.resolve(__dirname, "../slides");
+const galleryDir = path.resolve(__dirname, "../gallery");
+const slideProjectDirs = await fg("./*", {
+  cwd: slidesDir,
+  onlyFiles: false,
+  deep: 1,
+  absolute: true,
 });
 
+cd(rootDir);
 
-console.log( "📃 build slides ...");
-for (const file of talksFiles) {
-
-  if (file.isDirectory()) {
-    try {
-      const rawPackageJson = await fs.readFile(path.join(file.path, file.name, 'src/package.json'));
-      const packageJson = JSON.parse(rawPackageJson.toString());
-
-      console.log(packageJson.name);
-      await execPromise(`pnpm -r --filter=./pva2/${packageJson.name}/src/** run build`);
-
-    } catch (err) {
-      console.error(err);
-    }
-  }
+// dist
+if (!fs.existsSync(path.resolve(rootDir, "dist"))) {
+  fs.mkdirSync(path.resolve(rootDir, "dist"));
 }
+
+$`echo "📃 build slides ..."`;
+
+for (let dir of slideProjectDirs) {
+  const pkgJsonFile = path.resolve(dir, "package.json");
+  const pkgName = require(pkgJsonFile).name;
+
+  console.log(dir)
+
+  cd(dir);
+  await fs.promises.writeFile(path.join(dir, 'vite.config.ts'), `import { defineConfig } from "vite";
+
+export default defineConfig({
+  base: "/${pkgName}/",
+});
+`);
+
+  await $`pnpm build`;
+
+  console.log("vite.config.ts removed")
+  await fs.promises.unlink(path.join(dir, 'vite.config.ts'));
+
+  console.log("copy to root dist")
+  const src = path.join(dir, 'dist');
+  const dest = path.resolve(rootDir, 'dist', pkgName);
+  await fse.copy(src, dest);
+  await fse.remove(src);
+}
+/*
+console.log("gal")
+$`echo "🚀  build gallery index ..."`;
+cd(galleryDir);
+await $`pnpm build`;
+//await $`mv ./dist/* ${path.resolve(rootDir, 'dist')}`;
+//await $`mv ./dist/* ${path.resolve(rootDir, 'dist')}`;
+await fse.copy('./dist/*', path.resolve(rootDir, 'dist'));
+//await $`rm -rf ./dist`;
+rimraf('dist')
+*/
+$`echo "🎉  build success"`;
