@@ -12,18 +12,18 @@
 
   },
   "dependencies": {
-    "@slidev/cli": "^0.47.5",
-    "@slidev/theme-default": "latest"
-
+    "@slidev/cli": "^0.48.9",
+    "@slidev/theme-default": "latest",
+    "@slidev/types": "^0.48.8"
   },
-  "packageManager": "pnpm@9.1.1",
   "devDependencies": {
     "shiki": "latest",
     "playwright": "^1.44.0",
     "rimraf": "^5.0.7",
     "plop": "^4.0.0",
     "zx": "^7.2.3",
-    "fs-extra": "^10.0.0"
+    "fs-extra": "^10.0.0",
+    "playwright-chromium": "^1.44.1"
   },
   "keywords": [
     "python",
@@ -33,7 +33,7 @@
     "oa",
     "oaopava"
   ],
-  "author": "Adam Fišer",
+  "author": "Adam Fišer <adam.fiser@wanex.cz>",
   "license": "CC BY-NC 4.0"
 
 }

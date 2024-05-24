@@ -6,6 +6,8 @@ import path from "path";
 import "zx/globals";
 import {rimraf} from "rimraf";
 
+const GitPagesBase = "pva2_prednasky/"
+
 const rootDir = path.resolve(__dirname, "../");
 const slidesDir = path.resolve(__dirname, "../slides");
 const galleryDir = path.resolve(__dirname, "../gallery");
@@ -23,19 +25,22 @@ if (!fs.existsSync(path.resolve(rootDir, "dist"))) {
   fs.mkdirSync(path.resolve(rootDir, "dist"));
 }
 
+$`echo "📃 ============ ..."`;
 $`echo "📃 build slides ..."`;
+$`echo "📃 ============ ..."`;
 
 for (let dir of slideProjectDirs) {
   const pkgJsonFile = path.resolve(dir, "package.json");
   const pkgName = require(pkgJsonFile).name;
 
+  $`echo "📃 build slides ${pkgName} ..."`;
   console.log(dir)
 
   cd(dir);
   await fs.promises.writeFile(path.join(dir, 'vite.config.ts'), `import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/${pkgName}/",
+  base: "/${GitPagesBase}${pkgName}/",
 });
 `);
 

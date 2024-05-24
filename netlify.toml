@@ -16,11 +16,11 @@ status = 200
 #status = 200
 
 [[redirects]]
-  from = "/pva2/01_uvod_do_python/*"
-  to = "/pva2/01_uvod_do_python/index.html"
+  from = "/slidess/01_uvod_do_python/*"
+  to = "/slidess/01_uvod_do_python/index.html"
   status = 200
 
 [[redirects]]
-  from = "/pva2/02_input_konverze_text/*"
-  to = "/pva2/02_input_konverze_text/index.html"
+  from = "/slidess/02_input_konverze_text/*"
+  to = "/slidess/02_input_konverze_text/index.html"
   status = 200
