@@ -18,6 +18,12 @@ importers:
         specifier: ^0.48.8
         version: 0.48.9(@vue/compiler-sfc@3.4.27)(postcss@8.4.38)(rollup@4.18.0)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.12))(vue-template-compiler@2.7.16)
     devDependencies:
+      '@iconify-json/material-symbols':
+        specifier: ^1.1.80
+        version: 1.1.80
+      '@iconify-json/mdi':
+        specifier: ^1.1.66
+        version: 1.1.66
       fs-extra:
         specifier: ^10.0.0
         version: 10.1.0
@@ -375,6 +381,12 @@ packages:
 
   '@iconify-json/carbon@1.1.34':
     resolution: {integrity: sha512-azvhc5HP+CilSrzSEfP4MezsG5n4tj+vIJLADhqCbFM1BOAmyDe/K1lTL9GLDluybsCvSqb15+6AIRb1jtKhpQ==}
+
+  '@iconify-json/material-symbols@1.1.80':
+    resolution: {integrity: sha512-JrDMmWeHxFFMp3BBSsjvDvSiYzJ0qdYmHAQYWY/L5fxVZcIoeoQvtQR0wM1iJN4UDIsnHwbpJQ/sqZ/cvph6sw==}
+
+  '@iconify-json/mdi@1.1.66':
+    resolution: {integrity: sha512-7KPF2RVUUWav/hXCM8Ti/smqu3cmgePJpiX9CSkldiL+80+eBRBeKlc4vPOc9jhAItlqIU1vKsbKoPP0JIfgbg==}
 
   '@iconify-json/ph@1.1.13':
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
@@ -3741,6 +3753,14 @@ snapshots:
   '@floating-ui/utils@0.2.2': {}
 
   '@iconify-json/carbon@1.1.34':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols@1.1.80':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mdi@1.1.66':
     dependencies:
       '@iconify/types': 2.0.0
 

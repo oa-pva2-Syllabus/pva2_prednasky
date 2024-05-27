@@ -26,6 +26,7 @@ export:
   withClicks: false
 
 #== Slide Info
+src: '../../pages/index.md'
 title: &title "02 Input, konverze a práce s textem"
 exportFilename: "02_input_konverze_text"
 titleTemplate: "PVA2 %s by Adam Fišer"
@@ -37,34 +38,6 @@ info: |
   [Repository](https://github.com/OA-PVA2-Syllabus/pva2_prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
----
-
-## PVA2 Programování a vývoj aplikací
-
-{{ title }}
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    {{ title }} <carbon:arrow-right class="inline" />
-  </span>
-</div>
-
-
-
-<a href="https://github.com/AdamFiser" target="_blank" alt="GitHub"
-  class="abs-bl m-6 text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white"><carbon-logo-github /> Adam</a>
-[Adam Fišer](https://www.wanex.cz/)
-
-
-<div class="abs-br mr-6 mb-12">
-    <span
-      @click="$slidev.nav.next"
-      class="arrow-container cursor-pointer slidev-icon-btn opacity-50 !border-none !hover:text-white"
-    >
-      <carbon:chevron-right class="inline" />
-    </span>
-</div>
-
 ---
 layout: default
 ---

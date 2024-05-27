@@ -22,7 +22,9 @@
     "plop": "^4.0.0",
     "zx": "^7.2.3",
     "fs-extra": "^10.0.0",
-    "playwright-chromium": "^1.44.1"
+    "playwright-chromium": "^1.44.1",
+    "@iconify-json/mdi": "^1.1.66",
+    "@iconify-json/material-symbols": "^1.1.80"
   },
   "keywords": [
     "python",
