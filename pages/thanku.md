@@ -1,5 +1,6 @@
 ---
-layout: outro
+layout: end
+class: text-center
 ---
 
 # Děkuji za pozornost

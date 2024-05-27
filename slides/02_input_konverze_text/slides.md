@@ -380,3 +380,7 @@ name = "Ginger and Fred"
 age = "20"
 print(f"Hello, My name is {name} and I'm {age} years old.")
 ```
+
+---
+src: '../../pages/thanku.md'
+---

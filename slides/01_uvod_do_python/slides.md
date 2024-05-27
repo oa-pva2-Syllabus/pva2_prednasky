@@ -197,3 +197,6 @@ Hello World
 """
 ```
 
+---
+src: '../../pages/thanku.md'
+---
