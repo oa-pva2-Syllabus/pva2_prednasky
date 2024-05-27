@@ -37,12 +37,30 @@ for (let dir of slideProjectDirs) {
   console.log(dir)
 
   cd(dir);
-  await fs.promises.writeFile(path.join(dir, 'vite.config.ts'), `import { defineConfig } from "vite";
+  await fs.promises.writeFile(path.join(dir, 'vite.config.ts'), `import { defineConfig } from "vite";  
 
 export default defineConfig({
   base: "/${GitPagesBase}${pkgName}/",
 });
 `);
+
+  //components - copy from root to slides dir
+  console.log("prepare components")
+  const src_comp = path.resolve(rootDir, 'components');
+  const dest_comp = path.resolve(dir, 'components');
+
+  //global components - copy from root to slides dir
+  await fse.copy(src_comp, dest_comp);
+
+  //copy global components to slides
+  const src_globalFile = path.join(src_comp,'global-bottom.vue')
+  const dst_globalFile = path.join(dir,'global-bottom.vue')
+  await fse.copyFile(src_globalFile, dst_globalFile);
+
+
+
+  //await fse.copy(path.join(src_comp,'global-bottom.vue'), path.resolve(dir));
+
 
   await $`pnpm build`;
 

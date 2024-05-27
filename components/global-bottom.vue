@@ -1,5 +1,3 @@
-global-botttom.vue
-
 <template>
   <footer
     v-if="
