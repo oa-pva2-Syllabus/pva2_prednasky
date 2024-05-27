@@ -167,6 +167,8 @@ print("number = " + str(number)) # 12.0
 ```
 
 ---
+layout: two-cols-header
+---
 
 # Binární operace
 
@@ -177,11 +179,12 @@ print("number = " + str(number)) # 12.0
 * Relační operace: rovná se, nerovná se, menší než, větší než, menší nebo rovno, větší nebo rovno
 * Logické operace: a, nebo, negace
 * Bitové operace: a, nebo, negace, posun
-* Příklady: +, -, *, /, %, **, ==, !=, <, >, <=, >=, and, or, not, &, |, ~, <<, >>
+* Příklady: `+`, `-`, `*`, `/`, `%`, `**`, `==`, `!=`, `<`, `>`, `<=`, `>=`, `and`, `or`, `not`, `&`, `|`, `~`, `<<`, `>>`
 
-* Binární operace rozlišují pouze mezi hodnotami True a False.
+<!--
+* Logické operace rozlišují pouze mezi hodnotami True a False.
 * Porovnávací operátor rovnosti ==
-
+-->
 
 ```python
 two = 2
@@ -377,4 +380,3 @@ name = "Ginger and Fred"
 age = "20"
 print(f"Hello, My name is {name} and I'm {age} years old.")
 ```
-
