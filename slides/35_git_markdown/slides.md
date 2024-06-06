@@ -262,6 +262,11 @@ layout: two-cols-header
 layout: default
 ---
 # Tabulky
+- Svislítko `|` <kbd>AltGr</kbd> + <kbd>w</kbd>odděluje buňky
+- První řádek obsahuje hlavičky
+- Druhý řádek odděluje hlavičky od obsahu
+- Dále následují řádky s daty
+
 ## Syntaxe
   ```md
   | Hlavička 1 | Hlavička 2 |
