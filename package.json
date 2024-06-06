@@ -9,7 +9,10 @@
     "clean": "zx ./scripts/clean.js",
     "export": "pnpm -r run export"
   },
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@slidev/cli": "^0.48.9",
     "@slidev/theme-default": "latest",
@@ -24,7 +27,8 @@
     "fs-extra": "^10.0.0",
     "playwright-chromium": "^1.44.1",
     "@iconify-json/mdi": "^1.1.66",
-    "@iconify-json/material-symbols": "^1.1.80"
+    "@iconify-json/material-symbols": "^1.1.80",
+     "pnpm": "^9.2.0"
   },
   "keywords": [
     "python",

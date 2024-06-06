@@ -36,6 +36,9 @@ importers:
       plop:
         specifier: ^4.0.0
         version: 4.0.1
+      pnpm:
+        specifier: ^9.2.0
+        version: 9.2.0
       rimraf:
         specifier: ^5.0.7
         version: 5.0.7
@@ -49,6 +52,8 @@ importers:
   slides/01_uvod_do_python: {}
 
   slides/02_input_konverze_text: {}
+
+  slides/35_git_markdown: {}
 
 packages:
 
@@ -2698,6 +2703,11 @@ packages:
   plop@4.0.1:
     resolution: {integrity: sha512-5n8QU93kvL/ObOzBcPAB1siVFtAH1TZM6TntJ3JK5kXT0jIgnQV+j+uaOWWFJlg1cNkzLYm8klgASF65K36q9w==}
     engines: {node: '>=18'}
+    hasBin: true
+
+  pnpm@9.2.0:
+    resolution: {integrity: sha512-mKgP0RwucJZ0d2IwQQZDKz3cZ9z1S1qMAck/aKLNXgXmghhJUioG+3YoTUGiZg1eM08u47vykYO/LnObHa+ncQ==}
+    engines: {node: '>=18.12'}
     hasBin: true
 
   points-on-curve@0.2.0:
@@ -6745,6 +6755,8 @@ snapshots:
       node-plop: 0.32.0
       ora: 8.0.1
       v8flags: 4.0.1
+
+  pnpm@9.2.0: {}
 
   points-on-curve@0.2.0: {}
 
