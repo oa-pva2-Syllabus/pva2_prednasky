@@ -12,4 +12,3 @@ components.d.ts
 
 # use pnpm-lock
 yarn.lock
-package-lock.json
