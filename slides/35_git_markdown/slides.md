@@ -243,15 +243,14 @@ layout: default
   ````
   
 </v-click>
-<v-click>
 
+<v-click>
 - Specialita: Zobrazení bloku kódu v md syntaxi (tzn. předchozí blok)
   ````md
   ````md
   ```python
   print("Hello world")
-  ```
-  
+  ``` 
 </v-click>
 ---
 layout: default
