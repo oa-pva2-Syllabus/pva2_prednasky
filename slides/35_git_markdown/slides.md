@@ -60,14 +60,19 @@ layout: default
 ## Zdroje
 - [GitHub.com: Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
+
 ---
 layout: two-cols-header
 ---
 
 # Nadpisy
 
-- Používají se pro strukturování obsahu
+- Odstavec textu začíná na novém řádku.
+- Oddělení odstavců se provádí prázdným řádkem.
+- Nadpisy se používají pro strukturování obsahu
 - Úroveň nadpisu určuje znak `#`
+
+
 
 ::left::
 ## Syntaxe
@@ -88,6 +93,35 @@ layout: two-cols-header
 #### H4
 ##### H5
 ###### H6
+
+---
+layout: default
+---
+
+# Odstavce
+
+- Odstavec textu začíná na novém řádku.
+- Oddělení odstavců se provádí prázdným řádkem.
+
+
+### Syntaxe
+```markdown
+První řádek dlouhého textu.
+Druhý řádek odstavce.
+
+Třetí řádek kódu, první řádek druhého odstavce.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis vehicula elementum. Morbi porta molestie lorem, vitae congue augue semper sit amet. Praesent malesuada facilisis imperdiet. 
+```
+
+### Náhled
+První řádek dlouhého textu.
+Druhý řádek odstavce
+
+Třetí řádek kódu, první řádek druhého odstavce.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis vehicula elementum. Morbi porta molestie lorem, vitae congue augue semper sit amet. Praesent malesuada facilisis imperdiet. 
+
 
 ---
 layout: two-cols-header
