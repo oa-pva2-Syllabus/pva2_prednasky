@@ -6,7 +6,7 @@ const OUTPUT_PATH = 'dist';
 const PUBLIC_PATH = 'public/';
 const talks = [];
 
-const talksFiles = await fs.readdir(TALKS_PATH, { withFileTypes: true });
+const talksFiles = await fs.readdir(path.join(TALKS_PATH), { withFileTypes: true });
 
 
 console.log( "📃 build index ...");
@@ -23,7 +23,12 @@ for (const file of talksFiles) {
   }
 }
 
-const createLinkList = (talks) => talks.map(talk => `<li><a href="./${talk.path}">${talk.title}</a> | <a href="./${talk.path}">prezentace</a> | <a href="./${talk.path}/${talk.path}.pdf">PDF</a></li>`).join('');
+const createLinkList = (talks) => talks.map(talk => `
+<li>
+    <a href="./${talk.path}">${talk.title}</a> | <a href="./${talk.path}">prezentace</a> | <a href="./${talk.path}/${talk.path}.pdf">PDF</a>
+</li>`
+).join('');
+
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 <html lang="cs">
   <head>
@@ -34,7 +39,7 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
   </head>
   <body>
     <img src="logo.png" alt="Wanex logo" />
-    <h1>Přednášky</h1>
+    <h1>Seznam přednášek</h1>
     <ul>
       ${createLinkList(talks.reverse())}
     </ul>

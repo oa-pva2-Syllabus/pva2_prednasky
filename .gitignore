@@ -1,4 +1,6 @@
 node_modules
+dist
+.site
 .DS_Store
 dist
 *.local
@@ -7,3 +9,7 @@ dist
 components.d.ts
 *-export*
 *.pdf
+
+# use pnpm-lock
+yarn.lock
+package-lock.json
