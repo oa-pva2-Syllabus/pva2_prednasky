@@ -14,9 +14,9 @@
   ],
   "packageManager": "pnpm@9.1.1",
   "dependencies": {
-    "@slidev/cli": "^0.49.10",
+    "@slidev/cli": "^0.49.11",
     "@slidev/theme-default": "latest",
-    "@slidev/types": "^0.49.10",
+    "@slidev/types": "^0.49.11",
     "pnpm": "^9.2.0"
   },
   "devDependencies": {
