@@ -9,6 +9,8 @@ dist
 components.d.ts
 *-export*
 *.pdf
+*.pptx
+
 
 # use pnpm-lock
 yarn.lock
