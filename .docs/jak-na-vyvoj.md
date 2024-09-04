@@ -1,5 +1,9 @@
 # Jak na vývoj
 
+## Důležité zdroje
+- Seznam layoutů - https://sli.dev/builtin/layouts
+- Animace - https://sli.dev/guide/animations#click-animation
+
 ## Spouštění pro vývoj
 
 ```shell
@@ -82,3 +86,6 @@ A digital illustration of an anthropomorphic fox character with orange fur and a
 A digital illustration of an anthropomorphic fox with orange fur, wearing a blue hoodie with the hood up, giving an intense look. The fox is holding a tablet with an apple logo and a stylus pen, creating a focused and determined expression. Various small objects such as dice, cans, and gadgets are floating around the fox, set against a dark background. The style is cartoonish with bold lines and vibrant colors.
 
 A digital illustration of two cute, fluffy monsters. The larger monster is blue with big, round eyes, and it is focused on using a colorful tablet on a desk. The smaller monster, also blue and fluffy with a horn on its head, is sitting on a yellow device next to a stack of books with glasses on top. The background is a gradient of warm colors, ranging from pink to orange. The style is whimsical and colorful, with detailed fur textures and a playful atmosphere.
+
+
+https://mobirise.com/extensions/devm5/portal/
