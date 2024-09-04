@@ -27,8 +27,8 @@ export:
 
 #== Slide Info
 src: '../../pages/index.md'
-title: "01 Úvod do Python"
-exportFilename: "01_uvod_do_python"
+title: "00 Skeleton"
+exportFilename: "00_skeleton"
 titleTemplate: "PVA2 %s by Adam Fišer"
 info: |
   ## PVA2 Programování a vývoj aplikací
