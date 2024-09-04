@@ -105,6 +105,7 @@ image: https://cover.sli.dev
 
 ## Cíle předmětu 
 
+* Čelit problémům a hledat řešení
 * Formulovat problém a jeho řešení počítačovým program
 * Získat zkušenost s programováním
 * Osvojit si schopnost číst, psát a porozumět programům
@@ -150,10 +151,11 @@ layout: two-cols-header
 ---
 
 # Organizace předmětu
-* Výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
-* Zdrojové kódy odevzdáváme výhradně přes GitHub
+
 * Výuka probíhá formou přednášek a cvičení
 * Cvičení na sebe navazují
+* Výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
+* Zdrojové kódy odevzdáváme výhradně přes GitHub
 * Absence - Po návratu dopracovat chybějící cvičení
 
 
@@ -213,6 +215,17 @@ image: /predstaveni.jpg
 * Jaké mám očekávání od předmětu?
 * Co mě na IT baví nebo naopak nebaví?
 * Zajímavá informace o mě?
+
+---
+
+# První kroky
+
+Registrace kurzu na Moodle:
+
+* Přejděte na www.oa-opava.net
+* Zapište se do kurzu PVA2 2024/2025 - Programování a vývoj aplikací
+  (sekce Informační technologie\Adam Fišer\)
+* Nastavte si profilovou fotku.
 
 ---
 src: '../../pages/thanku.md'
