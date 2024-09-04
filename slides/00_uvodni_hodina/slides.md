@@ -54,9 +54,13 @@ layout: default
 
 # Lektor
 
-* Adam Fišer
+## Adam Fišer
+Software & solutions architect, analyst and occasional teacher with a passion for 🪴plants, IoT, FVE and economy
+
 * Senior Software architect
 * PKP CARGO INTERNATIONAL, a. s.
+* IT Freelancer a příležitostný lektor
+
 
 
 ## Kontakt
@@ -77,12 +81,7 @@ layout: default
 * MS 365, Eset, GA, SEO, marketing a další
 ---
 
-# Projekty
-
-* Specializace na Mzdové a personální systémy
-* Specializace na systémy pro řízení a správu v železniční dopravě
-
-## Realizované projekty
+# Realizované projekty
 
 * Projects for implementation of TAF TSI (Technical Specification for Interoperability relating to Telematics Applications for Freight Services)
 * Personální a informační systémy
@@ -94,7 +93,9 @@ layout: default
 * Customer relationship management
 * Business intelligence and/or Reporting system
 
-
+<!--
+Specializace HRM a rail logi systems
+-->
 
 ---
 layout: image-right
