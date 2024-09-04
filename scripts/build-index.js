@@ -23,26 +23,52 @@ for (const file of talksFiles) {
   }
 }
 
-const createLinkList = (talks) => talks.map(talk => `
-<li>
-    <a href="./${talk.path}">${talk.title}</a> | <a href="./${talk.path}">prezentace</a> | <a href="./${talk.path}/${talk.path}.pdf">PDF</a>
+const currentYear = new Date().getFullYear();
+
+const createLinkList = (talks) => {
+  // Seřadit pole talks vzestupně podle title
+  //talks.sort((a, b) => b.title.localeCompare(a.title));
+
+  return talks.map(talk => `
+<li class="ibm-plex-mono-thin">
+    <a href="./${talk.path}" class="ibm-plex-mono-semibold">${talk.title}</a> <span class="action">(<a href="./${talk.path}/${talk.path}.pdf">PDF</a>|<a href="./${talk.path}/overview/">O</a>|<a href="./${talk.path}/presenter" target="_blank">P</a>)</span>
 </li>`
-).join('');
+  ).join('');
+};
 
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
 <html lang="cs">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přednášky</title>
+    <title>Adam Fišer | Přednášky</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <img src="logo.png" alt="Wanex logo" />
-    <h1>Seznam přednášek</h1>
-    <ul>
-      ${createLinkList(talks.reverse())}
-    </ul>
+  
+    <div class="container">
+        <div class="row margin-top">
+            <div>                
+                <h1>PVA2 | Programování a vývoj aplikací</h1>               
+                       
+                <h2>Přednášky</h2>
+                <ol>
+                  ${createLinkList(talks)}
+                </ol>
+            </div>
+        </div>
+  
+    </div>  
+    
+    <footer class="footer text-center mt-4">
+        <p class="small">&copy; 2021 - ${currentYear} Adam Fišer. Všechna práva vyhrazena.</p>
+    </footer>  
+    
+    
   </body>
 </html>
 `);
