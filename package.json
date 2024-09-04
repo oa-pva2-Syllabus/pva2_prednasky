@@ -12,19 +12,19 @@
   "subPackages": [
     "slides/*"
   ],
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.9.0",
   "dependencies": {
-    "@slidev/cli": "^0.49.11",
+    "@slidev/cli": "^0.49.29",
     "@slidev/theme-default": "latest",
-    "@slidev/types": "^0.49.11",
+    "@slidev/types": "^0.49.29",
     "pnpm": "^9.2.0"
   },
   "devDependencies": {
-    "@iconify-json/material-symbols": "^1.1.82",
-    "@iconify-json/mdi": "^1.1.66",
+    "@iconify-json/material-symbols": "^1.2.0",
+    "@iconify-json/mdi": "^1.2.0",
     "fs-extra": "^10.1.0",
-    "playwright": "^1.44.1",
-    "playwright-chromium": "^1.44.1",
+    "playwright": "catalog:",
+    "playwright-chromium": "^catalog:",
     "plop": "^4.0.1",
     "rimraf": "^5.0.7",
     "shiki": "latest",
