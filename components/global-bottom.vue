@@ -8,7 +8,10 @@
     class="absolute bottom-0 left-1 p-2 text-sm w-full"
   >
     <div class="flex">
-      <div>
+      <div class="text-xs" style="
+          color: #e9ecf1;
+          "
+      >
         Adam Fišer
       </div>
       <div class="flex-grow">&nbsp;</div>
