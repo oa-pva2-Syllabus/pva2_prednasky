@@ -11,6 +11,13 @@ components.d.ts
 *.pdf
 *.pptx
 
+# Ignorovat node_modules v adresáři slides
+slides/**/node_modules/
 
+# Ignorovat components v adresáři slides
+slides/**/components/
+
+# Ignorovat soubory global_bottom.vue v adresáři slides
+slides/**/global_bottom.vue
 # use pnpm-lock
 yarn.lock
