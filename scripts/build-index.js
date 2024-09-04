@@ -5,6 +5,9 @@ const TALKS_PATH = 'slides/';
 const OUTPUT_PATH = 'dist';
 const PUBLIC_PATH = 'public/';
 const talks = [];
+const SKIP_TALKS = ['00_skeleton', '00_uvodni_hodina']; // Seznam přednášek k přeskočení
+
+const currentYear = new Date().getFullYear();
 
 const talksFiles = await fs.readdir(path.join(TALKS_PATH), { withFileTypes: true });
 
@@ -23,17 +26,15 @@ for (const file of talksFiles) {
   }
 }
 
-const currentYear = new Date().getFullYear();
 
 const createLinkList = (talks) => {
-  // Seřadit pole talks vzestupně podle title
-  //talks.sort((a, b) => b.title.localeCompare(a.title));
-
-  return talks.map(talk => `
+  return talks
+    .filter(talk => !SKIP_TALKS.includes(talk.path))
+    .map(talk => `
 <li class="ibm-plex-mono-thin">
     <a href="./${talk.path}" class="ibm-plex-mono-semibold">${talk.title}</a> <span class="action">(<a href="./${talk.path}/${talk.path}.pdf">PDF</a>)</span>
 </li>`
-  ).join('');
+    ).join('');
 };
 
 await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
@@ -65,7 +66,7 @@ await fs.writeFile(path.join(OUTPUT_PATH, 'index.html'), `<!DOCTYPE html>
     </div>  
     
     <footer class="footer text-center mt-4">
-        <p class="small">&copy; 2021 - ${currentYear} Adam Fišer. Všechna práva vyhrazena.</p>
+        <p class="small">&copy; ${currentYear} Adam Fišer | Wanex. Všechna práva vyhrazena.</p>
     </footer>  
     
     
