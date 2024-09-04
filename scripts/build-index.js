@@ -31,7 +31,7 @@ const createLinkList = (talks) => {
 
   return talks.map(talk => `
 <li class="ibm-plex-mono-thin">
-    <a href="./${talk.path}" class="ibm-plex-mono-semibold">${talk.title}</a> <span class="action">(<a href="./${talk.path}/${talk.path}.pdf">PDF</a>|<a href="./${talk.path}/overview/">O</a>|<a href="./${talk.path}/presenter" target="_blank">P</a>)</span>
+    <a href="./${talk.path}" class="ibm-plex-mono-semibold">${talk.title}</a> <span class="action">(<a href="./${talk.path}/${talk.path}.pdf">PDF</a>)</span>
 </li>`
   ).join('');
 };
