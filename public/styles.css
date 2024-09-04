@@ -12,9 +12,11 @@ h1 {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+
+    padding-top: 20px
 }
 
 h2 {
@@ -28,9 +30,11 @@ h2 {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+
+    padding-top: 20px
 }
 
 /* Přidat do souboru `styles.css` */
