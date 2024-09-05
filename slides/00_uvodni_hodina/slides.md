@@ -167,14 +167,14 @@ layout: two-cols-header
 Známky získáváte za:
 
 * Průběžná práce a aktivita v hodinách
+* Vypracované cvičení a úkoly (Cvičení na sebe navazují)
 * Testy
   * Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
   * U delší objektivní absence dle domluvy.
-  * Výukové materiály dovoleny.
+  * Výukové materiály dovoleny, není-li uvedeno jinak.
   * Kopírování, opisování a AI nikoli.
-
-* Komu se nepovede známka, může si vylepšit opravou.
-* Domluvě a vlastní iniciativě se meze nekladou
+  * Komu se nepovede známka, může si vylepšit opravou.
+* Domluvě a vlastní iniciativě se meze nekladou.
 
 
 ---
@@ -195,6 +195,7 @@ Známky získáváte za:
 # Zdroje a literatura
 
 * Hodiny, slidy, poznámky a vlastní poznámky
+* Cvičení na GitHubu
 * Edice CZ.NIC
   * Ponořme se do python(u) 3, Mark Pilgrim
   * PRO GIT, Scott Chacon
