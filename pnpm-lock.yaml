@@ -49,6 +49,10 @@ importers:
         specifier: ^7.2.3
         version: 7.2.3
 
+  slides/00_skeleton: {}
+
+  slides/00_uvodni_hodina: {}
+
   slides/01_uvod_do_python: {}
 
   slides/02_input_konverze_text: {}
