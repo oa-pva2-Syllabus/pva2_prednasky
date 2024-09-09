@@ -84,14 +84,14 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 # Realizované projekty
 
 * Projects for implementation of TAF TSI (Technical Specification for Interoperability relating to Telematics Applications for Freight Services)
-* Personální a informační systémy
+* Payroll and HR systém / Mzdový a personální systém KS, Pema, Pers, Abra
 * Operational and control systems of railway transport
 * Container Terminal Management System
 * System for familiarising employees with the directives
 * Loco and wagon repair management system
 * Document management system with workflows
 * Customer relationship management
-* Business intelligence and/or Reporting system
+* Business intelligence and Multi-reporting system
 
 <!--
 Specializace HRM a rail logi systems
@@ -120,33 +120,31 @@ layout: two-cols-header
 
 ::left::
 
-# Teoretický úvod
+## Známe z PVA1
 * Co je algoritmus, Pojmy, Rozdělení
 * Efektivita algoritmu
 * Způsoby zápisu, Vývojové diagramy
-* Softwarový vývoj
-  * Životní cyklus SW
-  * Metodiky a procesy vývoje
+* Strukturované programování
+* Datové typy
+* Řídící struktury (cykly, podmínky, funkce)
 * Algoritmizace
   * Význam, prvky algoritmu
-* IDE, přprava prostředí
-* SCM Git, GitHub a Markdown
-
 
 ::right::
 
 <v-click>
 
-# Python
-* Strukturované programování
-* Datové typy
-* řídící struktury (cykly, podmínky, funkce)
+## Software development
+* IDE, příprava prostředí
+* SCM Git, GitHub a Markdown
+* Softwarový vývoj
+  * Životní cyklus SW
+  * Metodiky a procesy vývoje
 * Datová výměna
 * Exceptions
 * Datum a čas
+* OOP (Třída, objekt, metody, property)
 * Tkinter
-* Úvod do OOP
-  * Třída, objekt, metody, property
 
 </v-click>
 ---
