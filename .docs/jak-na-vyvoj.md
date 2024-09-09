@@ -4,6 +4,8 @@
 - Seznam layoutů - https://sli.dev/builtin/layouts
 - Animace - https://sli.dev/guide/animations#click-animation
 
+- `background: https://cover.sli.dev` - obrázek na pozadí
+
 ## Spouštění pro vývoj
 
 ```shell
