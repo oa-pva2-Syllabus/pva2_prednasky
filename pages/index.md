@@ -1,3 +1,6 @@
+---
+title: PVA2 | Adam Fišer
+---
 # {{ $slidev.configs.title }}
 
 <div class="">
