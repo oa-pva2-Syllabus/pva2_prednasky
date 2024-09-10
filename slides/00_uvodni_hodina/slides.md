@@ -199,7 +199,9 @@ Známky získáváte za:
   * PRO GIT, Scott Chacon
 * O'Reilly – Learning Python
 * https://www.umimeprogramovat.cz/programovani-programovani-v-pythonu
+* https://www.youtube.com/cs50
 * https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books.md#python  
+* https://www.codewars.com/
 
 ---
 layout: image-right
@@ -215,6 +217,7 @@ image: /predstaveni.jpg
 * Jaké mám očekávání od předmětu?
 * Co mě na IT baví nebo naopak nebaví?
 * Zajímavá informace o mě?
+* Co chcete abych se o Vás dozvěděl?
 
 ---
 
