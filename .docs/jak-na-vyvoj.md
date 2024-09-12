@@ -21,6 +21,13 @@ background: https://cover.sli.dev
 ---
 ```
 
+- Umístění obrázku do pravého horního rohu
+```md
+<div class="absolute right-30px top-90px max-w-90">
+  <img src="/struktura_bez_git.png"/>
+</div>
+```
+
 ## Spouštění pro vývoj
 
 ```shell

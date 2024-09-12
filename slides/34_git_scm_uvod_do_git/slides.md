@@ -49,17 +49,22 @@ layout: default
 
 # Bez SCM
 
-- Projekt bez SCM
--Změny se ukládají ručně
--Změny se ukládají do adresáře s projektem
--Není organizace
--Není historie změn
--Není možné se vrátit k předchozí verzi
+- Změny se ukládají ručně
+- Špatná orientace adresáře s projektem
+- Není organizace
+- Není historie změn
+- Není možné se vrátit k předchozí verzi
+- Není možné spolupracovat na projektu
+- Není možné vytvářet větve
 
-<img src="/struktura_bez_git.png" />
+<div class="absolute right-30px top-90px max-w-90">
+  <img src="/struktura_bez_git.png"/>
+</div>
+
 
 ---
-layout: intro
+layout: cover
+background: https://cover.sli.dev
 ---
 
 # git
@@ -135,7 +140,6 @@ git add <soubor>
 - Příkaz `add` přidá soubor do tzv. stage. Stage je místo, kde se nachází soubory, které budou součástí následujícího commitu.
 - Lze použít pro jednotlivé soubory nebo pro celé adresáře.
 - Je nutné provést před `commitem`. Pokud soubor nebo adresář nebyl přidán do stage, nebude součástí commitu.
-- 
 
 ---
 
