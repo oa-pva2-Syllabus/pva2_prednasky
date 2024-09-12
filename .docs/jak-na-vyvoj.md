@@ -5,6 +5,21 @@
 - Animace - https://sli.dev/guide/animations#click-animation
 
 - `background: https://cover.sli.dev` - obrázek na pozadí
+- Obrázek: `<img src="/dev_head.jpg" />`
+
+```md
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+```
+
+```md
+---
+layout: cover
+background: https://cover.sli.dev
+---
+```
 
 ## Spouštění pro vývoj
 
