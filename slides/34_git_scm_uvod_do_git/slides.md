@@ -227,7 +227,7 @@ background: https://cover.sli.dev
 git config --global user.name "Jméno Příjmení"
 
 # Nastaví e-mail, který má být připojen k transakcím odevzdání.
-git config --global user.email "skolniEmail@oaopava.cz"
+git config --global user.email "skolniEmail@oa-opava.cz"
   
 # Volitelně
 # Povolí užitečné obarvení výstupu příkazového řádku
