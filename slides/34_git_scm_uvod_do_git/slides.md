@@ -250,18 +250,24 @@ background: https://cover.sli.dev
 # Registrace GitHub
 
 ## 1. Registrace pokud ještě nemáme účet
-- Vytvořit registraci na GitHub.com - https://education.github.com/pack
+- Vytvořit registraci na GitHub.com - https://www.GitHub.com
 - Uživatelské jméno ve tvaru `JmenoPrijmeni` nebo `JmenoPrijmeniPrezdivka`
 - Primární emailová adresa – školní/pracovní (ověřuje se vůči OA Enterprise)
-- Nutná 2FA
-- Při registraci povolit ověření polohy
+- Nutná 2FA autentizace
 
 Po registraci:
 - Nastavit sekundární email – soukromý – neztratíte přístup po opuštění organizace
-- Nastavte profil – fotografie, bio,..
+- Nastavte profil – Billing informace, fotografie, bio,..
 
-## 2. Získání výhod Education Pack
+---
+
+# Registrace GitHub
+
+## 2. Získání výhod GitHub Education Pack
+
 - **https://education.github.com/pack**
+- Při registraci povolit ověření polohy
+- Dokládá se fotka ISIC karty
 
 
 
