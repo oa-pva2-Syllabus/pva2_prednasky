@@ -7,6 +7,13 @@
 - `background: https://cover.sli.dev` - obrázek na pozadí
 - Obrázek: `<img src="/dev_head.jpg" />`
 
+```
+---
+hideInToc: true
+---
+```
+
+
 ```md
 ---
 layout: image-right
