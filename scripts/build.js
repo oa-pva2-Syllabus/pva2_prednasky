@@ -58,6 +58,15 @@ export default defineConfig({
   await fse.copyFile(src_globalFile, dst_globalFile);
 
 
+  //setup - copy from root to slides dir
+  console.log("prepare setup")
+  const src_setup = path.resolve(rootDir, 'setup');
+  const dest_setup = path.resolve(dir, 'setup');
+
+  //global components - copy from root to slides dir
+  await fse.copy(src_setup, dest_setup);
+
+
 
   //await fse.copy(path.join(src_comp,'global-bottom.vue'), path.resolve(dir));
 
