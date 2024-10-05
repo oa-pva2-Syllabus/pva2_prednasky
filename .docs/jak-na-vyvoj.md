@@ -7,18 +7,35 @@
 - `background: https://cover.sli.dev` - obrázek na pozadí
 - Obrázek: `<img src="/dev_head.jpg" />`
 
+
+Kliknutí
+```md
+<v-click>
+    
+</v-click>
+```
+
+Zdrojový kód s kliknutím
+```md
+php {all|1-4|6|7|8|all}
+```
+    
+
+Skrytí v obsahu
 ```
 ---
 hideInToc: true
 ---
 ```
 
-
+Dělící stránka s pravým obrázkem
 ```md
 ---
 layout: image-right
 image: https://cover.sli.dev
 ---
+
+# Nadpis
 ```
 
 ```md
@@ -27,6 +44,26 @@ layout: cover
 background: https://cover.sli.dev
 ---
 ```
+
+
+Dvousloupcový layout
+```md
+---
+layout: two-cols-header
+---
+
+# Nadpis
+
+- text
+
+::left::
+
+::right::
+
+---
+```
+
+
 
 - Umístění obrázku do pravého horního rohu
 ```md
