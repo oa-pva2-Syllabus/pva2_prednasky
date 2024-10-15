@@ -72,9 +72,9 @@ layout: default
 # Logické operátory
 
 
-- `&&`  (and) logický součin - obě hodnoty musejí být splněny
-- `||`  (or) logický součet - alespoň jedna hodnota musí být splněna
-- `not` (negace) - negace hodnoty
+- `and` logický součin - obě hodnoty musejí být splněny
+- `or`  logický součet - alespoň jedna hodnota musí být splněna
+- `not` negace hodnoty
 
 ---
 
@@ -185,9 +185,6 @@ else:
 - Výsledek je `True` pokud je alespoň jedna podmínka `True`
 
 
-
-
-
 ```python
 if( a==1 or b==0 ): # Vypíše ano
     print("ano")
@@ -247,7 +244,7 @@ Výstup:
 - `range()` - vytvoří posloupnost čísel
 
 ```python
-#funkce range generuje sekvenci celých čísel
+# funkce range generuje sekvenci celých čísel
 range(start, stop, step)
 Stop je povinný
 
