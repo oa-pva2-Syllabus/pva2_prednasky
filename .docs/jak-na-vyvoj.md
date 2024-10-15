@@ -72,6 +72,13 @@ layout: two-cols-header
 </div>
 ```
 
+## Klávesové zkratky
+```md
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Space</kbd>
+```
+
+
+
 ## Spouštění pro vývoj
 
 ```shell
