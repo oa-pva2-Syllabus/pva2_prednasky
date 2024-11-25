@@ -119,14 +119,24 @@ print("Den: " + str(aktualniDatum.day))
 
 ```python
 # Nahrání modulu a import třídy
-from datetime import time
+# datetime nahráváme kvůli získání aktuálního času
+from datetime import time, datetime
 
 # Vytvoření instance třídy time
 t = time(12, 30, 45, 100000)
 print("Zadaný čas: " + str(t)) # Zadaný čas: 12:30:45.100000
 
-# Aktuální čas
-aktualniCas = time.now()
+# Aktuální čas, pro získání aktuálního času používáme modul datetime
+# Funkce datetime.now() vrací aktuální datum a čas a pomocí metody time() získáme pouze čas
+aktualniDatumCas = datetime.now()
+aktualniCas = aktualniDatumCas.time()
+print("Aktuální čas: " + str(aktualniCas))
+```
+
+
+```python {all} {lines:true,startLine:11}
+# Nebo lépe než pomocí aktualniDatumCas a aktualniCas
+aktualniCas = datetime.now().time()
 print("Aktuální čas: " + str(aktualniCas))
 ```
 
@@ -185,23 +195,38 @@ print("Aktuální datum a čas: " + str(aktualniDatumCas))
 
 ---
 layout: image-right
+image: https://cover.sli.dev
 ---
+
 # Výpočty s datem a časem
 
 ---
 
 # Základní operace s datem a časem
+
+- Pro matematické operace s datem a časem můžeme použít operátory `+`, `-`, `*`, `/`.
+- Podmínkou pro operace je, že oba objekty musí být **stejného datového typu**.
+
 ```python
 from datetime import datetime
 
 dt = datetime(2024, 12, 24)
 
-# Určení dne v týdnu
+# Určení dne v týdnu pro zadané datum
 dt.weekday() # 0-pondělí, 1-úterý, 2-středa, 3-čtvrtek, 4-pátek, 5-sobota, 6-neděle
 dt.isoweekday() # 1-pondělí, 2-úterý, 3-středa, 4-čtvrtek, 5-pátek, 6-sobota, 7-neděle
 
-# Aktuální datum a čas
-datetime.now()
+# Rozdíl dvou dat
+d1 = datetime(2024, 12, 24, 10, 00, 00)
+d2 = datetime(2024, 12, 31, 22, 00, 00)
+
+rozdil = d2 - d1
+print("Rozdíl dvou dat: "+str(rozdil)) # 7 days, 12:00:00
+
+# Porovnání dvou dat
+d1 < d2 # True
+d1 > d2 # False
+
 ```
 
 ---
@@ -263,8 +288,14 @@ dnyDoMinulosti = 10
 vysledek = datum - timedelta(days=dnyDoMinulosti)
 print("Nové datum z minulosti: ")
 print(vysledek) # 2024-12-14 10:00:00
-
 ```
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Formátování datumu a času
 
 ---
 
@@ -280,7 +311,7 @@ from datetime import datetime
 
 dt = datetime(2024, 12, 24, 10, 00, 00)
 print(dt.strftime("%Y-%m-%d %H:%M:%S")) # 2024-12-24 10:00:00
-print(dt.strftime("%d.%m.%Y %H:%M:%S")) # 24.12.2024 10:00:00
+print(dt.strftime("%d.%m.%Y %H:%M")) # 24.12.2024 10:00
 ```
 
 ---
@@ -302,6 +333,13 @@ cas = "10:00:00"
 t = datetime.strptime(cas, "%H:%M:%S")
 print(t) # 1900-01-01 10:00:00
 ```
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Světový čas
 
 ---
 layout: two-cols-header
