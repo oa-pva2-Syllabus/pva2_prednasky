@@ -253,7 +253,88 @@ abc|def - buď abc nebo def
 ```
 
 ---
+layout: image-right
+image: https://cover.sli.dev
+---
 
+# Regex prakticky
+
+---
+
+
+# Postup při tvorbě regulárního výrazu
+
+1. **Definujte, co hledáte.**
+
+   - Např. "Hledám všechna slova, která začínají na `a` a končí na `z`."
+
+2. **Rozdělte problém na části.**
+
+   - Hledání slova: `[a-zA-Z]+`
+   - Začíná na `a`: `^a`
+   - Končí na `z`: `z$`
+
+3. **Postupně testujte jednotlivé části.**
+
+   - Začněte s jednoduchým výrazem a postupně přidávejte další pravidla.
+
+4. **Použijte nástroje pro testování.**
+
+   - Doporučené nástroje: [Regex101](https://regex101.com/) nebo [RegExr](https://regexr.com/).
+
+---
+
+# Vizualizace regulárních výrazů
+
+Např. pro regulární výraz `^a.*z$`:
+
+1. **`^`**: Začátek řádku.
+2. **`a`**: První znak musí být `a`.
+3. **`.*`**: Jakékoliv znaky (nula nebo více opakování).
+4. **`z$`**: Poslední znak musí být `z`.
+
+\::right::
+
+## Příklad
+
+```regex
+^a.*z$
+```
+
+| Text    | Výsledek |
+| ------- | -------- |
+| abc     | ✗        |
+| abcdefz | ✓        |
+| zabcdef | ✗        |
+| abcz    | ✓        |
+
+---
+
+# Časté chyby při tvorbě regexů
+
+1. **Zapomenutý escape znak**:
+
+   - Např. hledáte tečku (`.`), ale bez escapování se jedná o zástupný znak.
+   - Řešení: Použijte `\.`.
+
+2. **Příliš obecný výraz**:
+
+   - Např. `.*` může zachytit více, než potřebujete.
+   - Řešení: Zúžit pomocí kvantifikátorů, např. `.{1,5}`.
+
+3. **Nepoužité kotvy (********`^`********, ********`$`********)**:
+
+   - Pokud nehledáte od začátku nebo do konce řádku, může dojít k nechtěným výsledkům.
+   - Řešení: Použit kotvy tam, kde jsou nutné.
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Regex v Pythonu
+
+---
 
 # Regulární výrazy v Pythonu
 
