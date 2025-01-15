@@ -7,7 +7,7 @@ import "zx/globals";
 import {rimraf} from "rimraf";
 
 const GitPagesBase = "pva2_prednasky/"
-const GitPagesURL = "https://oa-pva4-syllabus.github.io/"
+const GitPagesURL = "https://oa-pva2-syllabus.github.io/"
 
 const rootDir = path.resolve(__dirname, "../");
 const slidesDir = path.resolve(__dirname, "../slides");
