@@ -7,6 +7,7 @@ import "zx/globals";
 import {rimraf} from "rimraf";
 
 const GitPagesBase = "pva2_prednasky/"
+const GitPagesURL = "https://oa-pva4-syllabus.github.io/"
 
 const rootDir = path.resolve(__dirname, "../");
 const slidesDir = path.resolve(__dirname, "../slides");
@@ -28,6 +29,8 @@ if (!fs.existsSync(path.resolve(rootDir, "dist"))) {
 $`echo "📃 ============ ..."`;
 $`echo "📃 build slides ..."`;
 $`echo "📃 ============ ..."`;
+
+let readmeContent = `# Seznam přednášek\n\n| Přednáška | Odkaz |\n|-----------|-------|\n`;
 
 for (let dir of slideProjectDirs) {
   const pkgJsonFile = path.resolve(dir, "package.json");
@@ -81,7 +84,14 @@ export default defineConfig({
   const dest = path.resolve(rootDir, 'dist', pkgName);
   await fse.copy(src, dest);
   await fse.remove(src);
+
+  // Add entry to README content
+  readmeContent += `| ${pkgName} | [Odkaz](${GitPagesURL}${GitPagesBase}${pkgName}/) |\n`;
 }
+
+// Write README.md
+await fs.promises.writeFile(path.resolve(rootDir, "README.md"), readmeContent);
+
 /*
 console.log("gal")
 $`echo "🚀  build gallery index ..."`;
