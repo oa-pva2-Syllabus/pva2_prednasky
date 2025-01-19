@@ -47,6 +47,14 @@ layout: default
 <Toc :columns="2" minDepth="1" maxDepth="1"></Toc>
 ---
 
+# Cíle přednášky
+
+- Pochopit rozdíl mezi třídou a objektem.
+- Naučit se, jak vytvořit třídu a objekt v Pythonu.
+- Osvojit si základní syntax objektově orientovaného programování (OOP).
+
+---
+
 # Objektově orientované programování
 
 - Doposud jsme programovali v procedurálním stylu
@@ -79,7 +87,7 @@ hideInToc: true
 
 - Třída je základním stavebním prvkem OOP. 
 - Jedná se o šablonu, která definuje vlastnosti a chování určitého typu objektu.
-- Každá třída se zapisuje do samostatného souboru, který je pojmenován stejně, jako název třídy.
+- Obsahuje atributy (vlastnosti) a metody (funkce).
 
 <v-click>
 
@@ -92,10 +100,12 @@ hideInToc: true
 - Před název třídy se používá klíčové slovo `class`
 - Název tříd se píše s velkým počátečním písmenem
 - Jedna třída = jeden soubor, nelze ji rozdělit mezi více.
+- Každá třída se zapisuje do samostatného souboru, který je pojmenován stejně, jako název třídy.
 - Třída musí být unikátní. V celé aplikaci může existovat pouze jednou.
 - Instancí může existovat neomezené množství. Jsme limitováni pouze HW zdroji.
 
 </v-click>
+
 
 
 ---
@@ -222,10 +232,6 @@ background: https://cover.sli.dev
 
 # Objekt
 
----
-
-# Objekt
-
 - **Objekt je konkrétní instance třídy**
 - má vlastnosti (atributy) a chování (metody), které jsme nadefeinovali v třídě
 - Objekty mohou spolupracovat mezi sebou
@@ -308,7 +314,14 @@ zamestnanci.append( Zamestnanec("Igor") )
 ```
 </v-click>
 
+---
 
+## Shrnutí
+
+- Třída je šablona, objekt je instance této šablony.
+- Atributy definují vlastnosti objektu.
+- Metody definují chování objektu.
+- Použití `__init__` metody umožňuje inicializaci objektu s počátečními hodnotami.
 
 ---
 src: '../../pages/thanku.md'
