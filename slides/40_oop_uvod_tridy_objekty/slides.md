@@ -61,6 +61,12 @@ layout: default
 - Objektově orientované programování (OOP) je programovací paradigma
 - Pomocí OOP se snažíme modelovat reálný svět
 - Hlavními koncepty OOP jsou dědičnost, zapouzdření a polymorfizmus
+- Snažíme se psát přehlednější, udržovatelnější kód.
+
+## Rozdíl od procedurálního přístupu
+
+- Procedurální styl: kód seskupený okolo funkcí/procedur.
+- OOP styl: kód seskupený do objektů – data (atributy) a funkce (metody) pospolu.
 
 ---
 
@@ -71,6 +77,24 @@ layout: default
 - OOP je založeno na objektech tj. strukturách, které obsahují jak informace (data), tak funkce (metody), které s těmi daty umí pracovat. 
 - Hlavním konceptem OOP je svázat data a funkce, které s nimi pracují, do jednoho celku tak, aby k těmto datům neměla přístup žádná jiná část kódu aplikace. 
 - V Pythonu je všechno objekt. Přesněji řečeno: všechno, co můžeme uložit do Pythoní proměnné – každá hodnota – je objekt. Čísla, řetězce, funkce, seznamy, soubory, metody, moduly, třídy, matice – všechno jsou objekty. (Nemusí a obecně neplatí pro jiné jazyky)
+
+---
+
+# Třída vs Objekt
+
+- Objekt je něco "živého", co právě teď existuje tzn. má instanci, může něco vykonávat nebo reagovat na jiné objekty.
+- Třída je staticky napsaný kód, který se bude teprve vyhodnocovat a po celou dobu zůstává stejný. Jaká si šablona popisující objekt.
+- Třída je uživatelem definovaná datová struktura, která spojuje datové členy a metody do jednoho celku.
+- Třída je plán/šablona kódu pro vytváření objektů.
+- Pomocí třídy můžete vytvořit libovolný počet objektů. Jsme limitování pouze HW zdroji.
+- Třída je statická, objekt je „živý“ za běhu programu.
+
+## Příklad
+- Třída: Auto
+- Objekty: Škoda Octavia, Ford Focus, BMW X5
+
+- Třída: Zvíře
+- Objekty: Pes, Kočka, Papoušek
 
 ---
 layout: cover
@@ -161,6 +185,41 @@ class Auto:
 
 ---
 
+# Přístup k atributům
+
+- Atributy třídy se volají pomocí tečkové notace `objekt.atribut`
+- Atributy třídy mohou být veřejné, chráněné nebo privátní
+
+```python
+# Vytvoření objektu mojeAuto, instance třídy Auto
+mojeAuto = Auto()
+mojeAuto.znacka = "Škoda"
+mojeAuto.model = "Octavia"
+
+print(mojeAuto.znacka) # Škoda
+print(mojeAuto.model) # Octavia
+```
+
+---
+
+# Přístup k atrubutům ve třídě
+
+- V třídě se na atributy odkazuje pomocí klíčového slova `self`
+- `self` je reference na objekt, který je vytvořen z třídy
+- `self` je první parametr v definici metody
+- `self` je vždy první parametr v metodě
+
+```python
+class Auto:
+    znacka = "Škoda"
+    model = None
+    
+    def info(self):
+        return f"{self.znacka} {self.model}"
+```
+
+---
+
 # Modifikátory přístupnosti
 
 - Atributy mohou být:
@@ -189,17 +248,21 @@ class Auto:
 
 - jsou atributy, jejichž hodnota se nemění
 - definují se jako privátní atributy a pojmenovávají se velkými písmeny
-- před pojmenováním je uvedeno klíčové slovo `const`
 - definují se v těle třídy, mimo metody
 - jsou dostupné pouze z třídy, ne z objektu
 - volají se pomocí názvu třídy
 
 
 Ukázka kontant
+
+```python
+class Matematika:
+    PI = 3.14
+```
     
 ```python
 class Auto:
-    const MAX_RYCHLOST = 250
+    MAX_RYCHLOST = 250
 ```
 
 
@@ -230,6 +293,10 @@ layout: cover
 background: https://cover.sli.dev
 ---
 
+# Objekty
+
+---
+
 # Objekt
 
 - **Objekt je konkrétní instance třídy**
@@ -244,7 +311,7 @@ background: https://cover.sli.dev
 
 ---
 
-# Objekt - příklad
+# Příklad
 
 ```python
 # Vytvoření objektu
@@ -255,16 +322,6 @@ auto1 = Auto()
 # Vytvoření objektu auto2, instance třídy Auto s využitím konstruktoru
 auto2 = Auto("Škoda", "Octavia", 2015)
 ```
-
----
-
-# Třída vs Objekt
-
-- Objekt je něco "živého", co právě teď existuje tzn. má instanci, může něco vykonávat nebo reagovat na jiné objekty.
-- Třída je staticky napsaný kód, který se bude teprve vyhodnocovat a po celou dobu zůstává stejný. Jaká si šablona popisující objekt.
-- Třída je uživatelem definovaná datová struktura, která spojuje datové členy a metody do jednoho celku. 
-- Třída je plán/šablona kódu pro vytváření objektů. 
-- Pomocí třídy můžete vytvořit libovolný počet objektů. Jsme limitování pouze HW zdroji.
 
 ---
 
@@ -313,6 +370,22 @@ zamestnanci.append( Zamestnanec("Zuzana") )
 zamestnanci.append( Zamestnanec("Igor") )
 ```
 </v-click>
+
+---
+
+# Přístup k atrubutům objektu
+
+- Atributy objektu se volají pomocí tečkové notace `objekt.atribut`
+- Atributy objektu mohou být veřejné, chráněné nebo privátní
+- Veřejné atributy jsou dostupné zvenčí, chráněné pouze z třídy a dědičných tříd, privátní pouze z třídy.
+- Pokud se pokusíme přistoupit k privátnímu atributu, Python vyhodí chybu `AttributeError`
+
+
+```python
+mojeAuto = Auto()
+mojeAuto.model = "Octavia"
+print(mojeAuto.info()) # Škoda Octavia
+```
 
 ---
 
