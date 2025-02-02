@@ -27,8 +27,8 @@ export:
 
 #== Slide Info
 src: '../../pages/index.md'
-title: "Konstruktor"
-exportFilename: "41_konstruktor"
+title: "Modifikátory přístupnosti"
+exportFilename: "42_modifikatory_pristupnosti"
 titleTemplate: "PVA2 %s by Adam Fišer"
 info: |
   ## PVA2 Programování a vývoj aplikací
