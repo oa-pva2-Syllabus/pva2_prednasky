@@ -102,6 +102,8 @@ auto = Auto() # Vráti chybu
 - Zlepšení čitelnosti kódu: Konstruktory jasně definují, jaké parametry třída potřebuje při vytvoření instanci.
 - Zjednodušení správy objektů: Všechny objekty jsou vytvořeny se stejnou základní strukturou, což pomáhá při práci s většími kódy.
 
+---
+
 # Shrnutí
 
 - Konstruktor je speciální metoda třídy
