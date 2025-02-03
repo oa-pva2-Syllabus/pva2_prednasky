@@ -19,7 +19,24 @@ Zdrojový kód s kliknutím
 ```md
 php {all|1-4|6|7|8|all}
 ```
-    
+
+Zdrojový kód s maximální výškou a scrollboxem
+```md
+php {*}{maxHeight:'400px'}
+```
+
+
+Zvýraznění textu
+- číslovat  `v-mark.box.red="1"`
+```md
+<span v-mark.box.red="1"> Rámeček kolem textu </span>
+<span v-mark.highlight.yellow="2"> Zvýrazňovač žlutý</span>
+<span v-mark.highlight.red="5"> Zvýrazňovač červený</span>
+<span v-mark.underline.red="6"> Podtržení červené </span>
+```
+
+
+
 
 Skrytí v obsahu
 ```
