@@ -206,7 +206,6 @@ print(mojeAuto.model) # Octavia
 
 - V třídě se na atributy odkazuje pomocí klíčového slova `self`
 - `self` je reference na objekt, který je vytvořen z třídy
-- `self` je první parametr v definici metody
 - `self` je vždy první parametr v metodě
 
 ```python
@@ -217,30 +216,6 @@ class Auto:
     def info(self):
         return f"{self.znacka} {self.model}"
 ```
-
----
-
-# Modifikátory přístupnosti
-
-- Atributy mohou být:
-  - veřejné `public`,
-  - chráněné `protected` prefix `_`
-  - nebo privátní `private` prefix `__`
-- Veřejné atributy jsou dostupné zvenčí, chráněné pouze z třídy a dědičných tříd, privátní pouze z třídy.
-
-
-```python
-class Auto:
-    # public
-    znacka = "Škoda"
-    
-    # protected
-    _prodejniCena = 790000
-    
-    # private
-    __vyrobniCena = 440000
-```
-
 
 ---
 
@@ -277,12 +252,6 @@ class Auto:
     model = None
     rok_vyroby = None
 
-    # Konstruktor
-    def __init__(self, znacka, model, rok_vyroby):
-        self.znacka = znacka
-        self.model = model
-        self.rok_vyroby = rok_vyroby
-
     # Metoda
     def info(self):
         return f"{self.znacka} {self.model} z roku {self.rok_vyroby}"
@@ -302,25 +271,18 @@ background: https://cover.sli.dev
 - **Objekt je konkrétní instance třídy**
 - má vlastnosti (atributy) a chování (metody), které jsme nadefeinovali v třídě
 - Objekty mohou spolupracovat mezi sebou
-- Objekty mohou být:
-  - vnořené (objekt v objektu)
-  - děděné (třída může dědit od jiné třídy)
-  - polymorfní (objekty mohou mít stejné rozhraní, ale jinou implementaci)
-  - zapouzdřené (skrýváme vnitřní stav objektu)
-- Python je objektově orientovaný programovací jazyk, takže se v něm se vším zachází jako s objektem. Objekt je entita reálného života. Je to soubor různých dat a funkcí, které s těmito daty pracují.
-
+- Objekty mohou být vytvářeny, mazány a modifikovány za běhu programu
+- Objekt je vytvořením instance třídy, která je šablonou pro objekt
+- Třídu importuje do programu `from soubor import Trida`
 ---
 
 # Příklad
 
 ```python
-# Vytvoření objektu
+from auto import Auto  # Import třídy Auto ze souboru auto.py
 
 # Vytvoření objektu auto1, instance třídy Auto
 auto1 = Auto() 
-
-# Vytvoření objektu auto2, instance třídy Auto s využitím konstruktoru
-auto2 = Auto("Škoda", "Octavia", 2015)
 ```
 
 ---
