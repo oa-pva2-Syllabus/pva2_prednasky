@@ -187,6 +187,86 @@ otakar.vek = 19 # Volání setteru nikoli atributu
 print(otakar.vek) # Volání getteru nikoli atributu
 ```
 
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Příklad
+
+---
+
+# Třída `Thermometer`
+
+```python {*|2-8|10-24|26-36}{maxHeight:'400px'}
+class Thermometer:
+    def __init__(self, temperature_celsius):
+        # Atributy 
+        # Interní proměnná
+        self._temperature_celsius = 0  
+        
+        # Použití setteru
+        self.set_temperature(temperature_celsius)  
+
+    def set_temperature(self, value, scale="C"):
+        """
+        Setter, který umožňuje nastavit teplotu ve stupních Celsia, Kelvinech nebo Fahrenheitových stupních.
+        scale: "C" - Celsius (výchozí), "K" - Kelvin, "F" - Fahrenheit
+        """
+        if scale == "C":
+            self._temperature_celsius = value
+        elif scale == "K":
+            if value < 0:
+                raise ValueError("Teplota v Kelvinech nemůže být záporná!")
+            self._temperature_celsius = value - 273.15
+        elif scale == "F":
+            self._temperature_celsius = (value - 32) * 5 / 9
+        else:
+            raise ValueError("Neplatná jednotka! Použijte 'C', 'K' nebo 'F'.")
+
+    def get_temperature(self):
+        """Getter pro aktuální teplotu v °C"""
+        return self._temperature_celsius
+        
+    def get_temperature_fahrenheit(self):
+        """Vrací teplotu ve stupních Fahrenheit"""
+        return self._temperature_celsius * 9 / 5 + 32
+
+    def get_temperature_kelvin(self):
+        """Vrací teplotu v Kelvinech"""
+        return self._temperature_celsius + 273.15
+```
+
+
+---
+
+# Použití třídy `Thermometer`
+
+
+```python
+from thermometer import Thermometer
+
+# Vytvoření instance třídy Thermometer
+thermometer = Thermometer(25)
+
+# Výpis teploty ve stupních Celsia, Fahrenheita a Kelvinech
+print("Teplota v °C:", thermometer.get_temperature())
+print("Teplota v °F:", thermometer.get_temperature_fahrenheit())
+print("Teplota v K:", thermometer.get_temperature_kelvin())
+
+# Nastavení teploty v Kelvinech
+thermometer.set_temperature(300, "K")
+print("\nPo nastavení na 300 K:")
+print("Teplota v °C:", thermometer.get_temperature())
+print("Teplota v °F:", thermometer.get_temperature_fahrenheit())
+print("Teplota v K:", thermometer.get_temperature_kelvin())
+
+# Pokus o nastavení záporné hodnoty v Kelvinech (vyvolá chybu)
+try:
+    thermometer.set_temperature(-10, "K")
+except ValueError as e:
+    print("\nChyba:", e)
+```
 
 
 ---
