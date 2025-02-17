@@ -66,6 +66,9 @@ layout: default
 | Veřejná    | `def funkce()`   | Zvenčí        |
 | Privátní   | `def __funkce()` | Pouze z třídy |
 
+---
+
+# Příklad
 
 ```python
 class Auto:
