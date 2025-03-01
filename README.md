@@ -16,3 +16,7 @@
 | 34_git_scm_uvod_do_git | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/34_git_scm_uvod_do_git/) |
 | 35_git_markdown | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/35_git_markdown/) |
 | 40_oop_uvod_tridy_objekty | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/40_oop_uvod_tridy_objekty/) |
+| 41_konstruktor | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/41_konstruktor/) |
+| 42_modifikatory_pristupnosti | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/42_modifikatory_pristupnosti/) |
+| 43_privatni_funkce | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/43_privatni_funkce/) |
+| 44_dedicnost | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/44_dedicnost/) |
