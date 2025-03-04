@@ -75,6 +75,61 @@ layout: image-right
 image: https://cover.sli.dev
 ---
 
+# GitHub Issues
+
+---
+
+# Co jsou Issues?
+
+Issues jsou nástrojem pro sledování úkolů, chyb a požadavků v rámci projektu. Každý Issue obsahuje popis problému, komentáře, štítky, přiřazené osoby a další metadata. Issues jsou klíčovým prvkem pro správu projektů a komunikaci v týmu.
+
+## Proč používat Issues?
+
+- Sledování úkolů – Issues umožňují vytvářet, přiřazovat a sledovat úkoly v rámci projektu.
+- Diskuze a komentáře – členové týmu mohou diskutovat, přidávat komentáře a navrhovat řešení.
+- Prioritizace úkolů – Issues lze označit štítky, přiřadit prioritu a přiřadit kategorii.
+- Integrace s Pull Requesty – Issues lze propojit s Pull Requesty a sledovat, které změny řeší daný problém.
+- Historie změn – každý Issue uchovává záznam o změnách, komentářích a řešení.
+- Otevřenost a transparentnost – Issues jsou veřejné a umožňují zapojit komunitu do řešení problémů.
+
+---
+
+# Jak fungují Issues?
+
+- Vytváření Issues – Každý člen týmu může vytvořit issue k hlášení chyby, požadavku na funkci nebo dokumentaci.
+- Přiřazování – Issues lze přiřadit konkrétním členům týmu, kteří jsou zodpovědní za jejich řešení.
+- Tagování (Labels) – Možnost přidávat štítky jako bug, enhancement, question pro snadnější organizaci.
+- Milestones – Lze seskupit Issues do milníků pro sledování pokroku větších úkolů.
+- Diskuze a komentáře – Každý Issue umožňuje komentování, zpětnou vazbu a odkazy na související kód.
+- Uzavření Issues – Jakmile je problém vyřešen, Issue se uzavře, což zlepšuje přehlednost projektu.
+
+---
+
+# Jak vytvořit Issue?
+
+1. Přejděte do záložky **Issues** v repozitáři.
+2. Klikněte na tlačítko **New Issue**.
+3. Zadejte název a popis problému.
+4. Přiřaďte Issue kategorii, štítky a přiřaďte osobu.
+5. Klikněte na tlačítko **Submit new issue**.
+
+---
+
+# Řešení Issues
+
+Vždy pracujeme s konkrétním Issue, které obsahuje popis problému, komentáře a metadata. Jeho identifikátor je unikátní a lze ho použít k odkazování v Pull Requestech a komentářích.
+
+1. **Přiřazení Issue** – Každý Issue by měl být přiřazen konkrétní osobě, která je zodpovědná za jeho řešení.
+2. **Diskuze a komentáře** – Členové týmu mohou přidávat komentáře, diskutovat a navrhovat řešení.
+3. **Pull request** Po dokončení vytvoříte Pull Request s odkazem na Issue (`Fix #123`).
+4. **Schválení** - Po schválení Pull Requestu se Issue automaticky uzavře.
+
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
 # Větvení v GITu
 
 ---
