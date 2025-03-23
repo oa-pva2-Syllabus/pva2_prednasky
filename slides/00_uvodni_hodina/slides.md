@@ -61,12 +61,14 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 * PKP CARGO INTERNATIONAL, a. s.
 * IT Freelancer a příležitostný lektor
 
-
-
 ## Kontakt
-* Teamsy
+
+* Výhradně jen Teamsy
+* přes bakaláře **nepište**
 * Email: adam.fiser@wanex.cz
+* Tel: +420 777 052 248
 * Konzultace: místnost 217, kdykoli po domluvě
+
 ---
 
 # Lektor ve zkratkách
@@ -83,15 +85,40 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 
 # Realizované projekty
 
-* Projects for implementation of TAF TSI (Technical Specification for Interoperability relating to Telematics Applications for Freight Services)
-* Payroll and HR systém / Mzdový a personální systém KS, Pema, Pers, Abra
-* Operational and control systems of railway transport
-* Container Terminal Management System
-* System for familiarising employees with the directives
-* Loco and wagon repair management system
-* Document management system with workflows
-* Customer relationship management
-* Business intelligence and Multi-reporting system
+Role: Projektový manažer, architekt, analytik a občasný vývojář
+
+- **Systémy a procesy pro DevOps**  
+  *Vybudování odd a zavedení procesů a systémů pro vývoj a nasazení aplikací.* Docker, Elastic, Sentry, Git/GitHub, Grafana, ... 
+
+- **TAF TSI Implementation**  
+  *Implementace TAF TSI (Technická specifikace pro interoperabilitu týkající se telematických aplikací pro nákladní dopravu.).*
+
+- **Mzdový a personální systémy**  
+  *Implementace systémů KS, Pema, Pers, Abra pro správu mezd a personálních dat.*
+
+- **Business Intelligence a reporting**  
+  *Systémy pro analýzu a výměny dat, automatizace reportů*
+
+- **Řídicí systémy železniční dopravy**  
+  *Vývoj operačních a kontrolních systémů pro železniční dopravu.* LWP, Eval, isdl, ...
+
+- **Customer Relationship Management (CRM)**  
+  *Systémy pro správu vztahů se zákazníky a kalkulační systém.* kaplan, plusKlub
+
+- **Systém správy dokumentů**  
+  *Implementace DMS pro správu smluv, faktur, atd.* Sharepoint, Nintex, Treeinfo, Alfresco
+
+- **Systém pro seznámení s předpisy**  
+  *Nástroj pro obeznámení zaměstnanců s interními směrnicemi a předpisy.* Doku, Manes, Alfresco
+
+- **Systém správy oprav**  
+  *Řízení oprav a údržby kolejových vozidel.*
+
+- **Container Terminal Management System**  
+  *Řízení provozu kontejnerových terminálů.* Konti
+
+- **Mobilní terminály a MDM**  
+  *Aplikace pro řízení personálu v terénu* Workspace One, Airwatch, MobiDriver
 
 <!--
 Specializace HRM a rail logi systems
@@ -160,19 +187,24 @@ layout: two-cols-header
 
 ---
 
-# Hodnocení
+# Hodnocení a pravidla
 
 Známky získáváte za:
 
-* Průběžná práce a aktivita v hodinách
-* Vypracované cvičení a úkoly (Cvičení na sebe navazují)
-* Testy
-  * Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
-  * U delší objektivní absence dle domluvy.
-  * Výukové materiály dovoleny, není-li uvedeno jinak.
-  * Kopírování, opisování a AI nikoli.
-  * Komu se nepovede známka, může si vylepšit opravou.
-* Domluvě a vlastní iniciativě se meze nekladou.
+- Průběžná práce a aktivita v hodinách
+- Vypracované cvičení a úkoly (Cvičení na sebe navazují)
+- Testy
+  - Výukové materiály dovoleny, není-li uvedeno jinak.
+  - Kopírování, opisování a AI nikoli.
+  - Zahájený test znamená jeho známkování.
+- Absance testu
+  - Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
+  - Žádáme minimálně 2 pracovní dny předem.
+  - U delší objektivní absence dle domluvy.
+  - Svou klasifikaci si hlídáte sami.
+- Opravy a zlepšení známky 
+  - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
+  - Domluvě a vlastní iniciativě se meze nekladou.
 
 
 ---
@@ -187,6 +219,31 @@ Známky získáváte za:
 | 40-53%  | 4     | 38-39% | 4-    |
 | 0-37%   | 5     |        |       |
 
+Celkové hodnocení
+86–100 %: Výborný kód, plně funkční, čitelný, efektivní a bezpečný.
+71–85 %: Velmi dobrý kód, drobné chyby nebo nedostatky v čitelnosti či optimalizaci.
+54–70 %: Průměrný kód, obsahuje chyby nebo má špatnou strukturu.
+38–53 %: Nedokončený nebo špatně napsaný kód, neplní zadání.
+0–37 %: Neodevzdáno nebo zcela nefunkční řešení.
+
+---
+
+# Kritéria hodnocení
+
+1. Technická správnost:
+- Správná syntaxe
+- Funkčnost všech částí kódu
+- Bez zbytečných částí kódu
+
+2. Splnění zadání
+- Implementace všech požadovaných funkcionalit
+
+3. Styl kódu:
+- Přehledné odsazení
+- Použití komentářů
+
+4. Bonusové body:
+- Originální a efektivní řešení
 
 ---
 
