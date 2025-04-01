@@ -179,7 +179,7 @@ layout: two-cols-header
 # Organizace předmětu
 
 * Výuka probíhá formou přednášek a cvičení
-* Cvičení na sebe navazují
+* Cvičení na sebe obsahově anebo výukově navazují
 * Výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
 * Zdrojové kódy odevzdáváme výhradně přes GitHub
 * Absence - Po návratu dopracovat chybějící cvičení
@@ -196,7 +196,7 @@ Známky získáváte za:
 - Testy
   - Výukové materiály dovoleny, není-li uvedeno jinak.
   - Kopírování, opisování a AI nikoli.
-  - Zahájený test znamená jeho známkování.
+  - Každý zahájený test znamená jeho známkování (ikdyž není určen pro Vás).
 - Absance testu
   - Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
   - Žádáme minimálně 2 pracovní dny předem.
@@ -206,6 +206,14 @@ Známky získáváte za:
   - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
   - Domluvě a vlastní iniciativě se meze nekladou.
 
+---
+
+# Pravidla
+
+- Jídlo a pití máte povoleno, ale v rámci mezí slušného chování
+- Na toaletu v průběhu hodin, neptáme se, oznámíme, ale vždy jen jednotlivě
+- Všechny židle budou vždy dole
+- Na konci hodiny, židle nahoru, zavřená okna - odpovídá služba.
 
 ---
 
