@@ -314,7 +314,7 @@ def test_divide_by_zero():
 
 # GitHub Actions workflow `pytest.yml`
 
-```yaml {*|1|3-7|9-11|9-14|16-19|21-25|27-29|31-35|*}{maxHeight:'450px'}
+```yaml {*|1|3-7|9-11|9-14|16-19|21-25|27-29|31-37|*}{maxHeight:'450px'}
 name: Python tests
 
 on:
@@ -344,7 +344,9 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov=src --cov-report=xml
-    
+
+    # Možné rozšíření
+    # codecov - jen pokud máte registraci a propojení
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
@@ -408,7 +410,7 @@ graph TD
 - [Marketplace GitHub Actions](https://github.com/marketplace?type=actions)
 - [Pytest dokumentace](https://docs.pytest.org/)
 - [Awesome Actions - kolekce užitečných GitHub Actions](https://github.com/sdras/awesome-actions)
-- [GitHub Learning Lab - kurzy o GitHub Actions](https://lab.github.com/)
+- [Codecov - nástroj pro analýzu pokrytí kódu](https://codecov.io/)
 
 
 ---
