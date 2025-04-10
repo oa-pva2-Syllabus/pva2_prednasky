@@ -160,7 +160,7 @@ layout: two-cols
 - Zdrojové kódy v GitHub repozitáři
 - Prezentaci odevzdáte jako PDF soubor do repozitáře
 
-::right
+::right::
 
 ## Prezentace
 - Krátká prezentace projektu ukázka funkcionality
