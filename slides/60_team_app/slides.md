@@ -148,12 +148,19 @@ Vaše aplikace by měla splňovat následující:
 - Za unikátní řešení, které jsme dosud nezkoušeli.
 
 ---
+layout: two-cols
+---
 
 # Odevzdání projektu
+
+- Prezentace bude realizována v termínu 26.5. - 13.6.2025
+- **nenechávejte na poslední termín**, nemusíte při velkém zájmu dostat prostor
 
 ## Co odevzdáte
 - Zdrojové kódy v GitHub repozitáři
 - Prezentaci odevzdáte jako PDF soubor do repozitáře
+
+::right
 
 ## Prezentace
 - Krátká prezentace projektu ukázka funkcionality
@@ -166,8 +173,7 @@ Vaše aplikace by měla splňovat následující:
   - Jaké úkoly jste měli v týmu?
   - Prezentujeme jako tým, každý člen odprezentuje svou část
 
-- Prezentace bude realizována v termínu 26.5. - 13.6.2025
-- **nenechávejte na poslední termín**, nemusíte při velkém zájmu dostat prostor
+
 
 
 ---
