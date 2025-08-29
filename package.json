@@ -17,7 +17,7 @@
   "devDependencies": {
     "@slidev/cli": "^52.1.0",
     "@slidev/theme-default": "^0.25.0",
-    "@slidev/types": "^52.1.0"
+    "@slidev/types": "^52.1.0",
     "@iconify-json/material-symbols": "^1.2.33",
     "@iconify-json/mdi": "^1.2.3",
     "fs-extra": "^11.3.1",
