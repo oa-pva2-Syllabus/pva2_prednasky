@@ -35,7 +35,7 @@ info: |
 
   Určeno pouze pro výukové účely
 
-  [Repository](https://github.com/OA-PVA2-Syllabus/pva2_prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
+  [Repository](https://github.com/OA-PVA2-Syllabus/prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
 ---
@@ -130,7 +130,7 @@ Téma si volíte vlastní, ale zde je pár příkladů:
 Pravidla hry
 - Práce bude probíhat ve skupinách po 3-4 lidech.
 - Kód ukládejte na GitHub a používejte verzování.
-- Každý člen týmu ytvoří alespoň jednu branch a provede několik commitů za svou část práce.
+- Každý člen týmu vytvoří alespoň jednu branch a provede několik commitů za svou část práce.
 - Připravte jednoduchý README.md soubor s popisem projektu, rozdělení odpovědností členů týmu a návodem na spuštění.
 
 ---

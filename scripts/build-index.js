@@ -65,7 +65,7 @@ const readmeLines = [
     '',
     '| Přednáška | Odkaz |',
     '|-----------|-------|',
-    ...entries.map(e => `| ${e.title} | [Odkaz](https://oa-pva2-syllabus.github.io/pva2_prednasky/${e.name}/) |`)
+    ...entries.map(e => `| ${e.title} | [Odkaz](https://oa-pva2-syllabus.github.io/prednasky/${e.name}/) |`)
 ]
 await fs.writeFile(path.resolve('README.md'), readmeLines.join(NL) + NL, 'utf8')
 

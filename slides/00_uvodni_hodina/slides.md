@@ -35,7 +35,7 @@ info: |
 
   Určeno pouze pro výukové účely
   
-  [Repository](https://github.com/OA-PVA2-Syllabus/pva2_prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
+  [Repository](https://github.com/OA-PVA2-Syllabus/prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
 ---
@@ -187,33 +187,12 @@ layout: two-cols-header
 
 ---
 
-# Hodnocení a pravidla
-
-Známky získáváte za:
-
-- Průběžná práce a aktivita v hodinách
-- Vypracované cvičení a úkoly (Cvičení na sebe navazují)
-- Testy
-  - Výukové materiály dovoleny, není-li uvedeno jinak.
-  - Kopírování, opisování a AI nikoli.
-  - Každý zahájený test znamená jeho známkování (ikdyž není určen pro Vás).
-- Absance testu
-  - Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
-  - Žádáme minimálně 2 pracovní dny předem.
-  - U delší objektivní absence dle domluvy.
-  - Svou klasifikaci si hlídáte sami.
-- Opravy a zlepšení známky 
-  - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
-  - Domluvě a vlastní iniciativě se meze nekladou.
-
----
-
-# Pravidla
+# Základní pravidla
 
 - Jídlo a pití máte povoleno, ale v rámci mezí slušného chování
 - Na toaletu v průběhu hodin, neptáme se, oznámíme, ale vždy jen jednotlivě
 - Všechny židle budou vždy dole
-- Na konci hodiny, židle nahoru, zavřená okna - odpovídá služba.
+- Na konci hodiny, uklizená třída, židle nahoru, zavřená okna - odpovídá služba.
 
 ---
 
@@ -233,6 +212,59 @@ Celkové hodnocení
 54–70 %: Průměrný kód, obsahuje chyby nebo má špatnou strukturu.
 38–53 %: Nedokončený nebo špatně napsaný kód, neplní zadání.
 0–37 %: Neodevzdáno nebo zcela nefunkční řešení.
+
+---
+
+
+# Hodnocené aktivity
+
+Známky získáváte za:
+
+- Průběžná práce a aktivita v hodinách
+- Vypracované cvičení a úkoly (Cvičení na sebe navazují)
+- Testy
+- Projekty a závěrečná práce
+- Zkoušení
+
+---
+
+# Testy a zkoušení
+
+- Testy
+  - Výukové materiály dovoleny, není-li uvedeno jinak.
+  - Kopírování, opisování a AI nikoli.
+  - Každý zahájený test znamená jeho známkování (ikdyž není určen pro Vás).
+
+---
+
+# Neklasifikace a opravy
+
+- Cvičení, úkoly a práce musí být všechny vypracovány.
+
+- Neklasifikace
+  - Není-li test napsán/úkol v řádném termínu, není průběžně klasifikován.
+  - Není-li psán test v řádném termínu kvůli vážnému omluveném důvodu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
+  - Žádáme minimálně 2 pracovní dny předem.
+  - U delší objektivní absence dle domluvy.
+  - Svou klasifikaci si hlídáte sami.
+
+- Opravy a zlepšení známky 
+  - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
+  - Domluvě dopředu a vlastní iniciativě se meze nekladou.
+
+- Nenechávejte klasifikaci na poslední chvíli
+
+---
+
+# Odevzdání po termínu
+
+- Je-li práce odevzdaná po termínu,
+  - nejsou započítány body za včasnost,
+  - nejvyšší hodnocení je 3 pro zcela funkční řešení dle zadání
+  - dostatečně je hodnocena práce, která splňuje zadání, je funkční, ale obsahuje chyby
+  - nedostatečně je hodnocena práce, která neplní zadání nebo je nefunkční
+
+ 
 
 ---
 
