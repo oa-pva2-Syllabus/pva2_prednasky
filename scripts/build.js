@@ -12,7 +12,7 @@ if (process.platform === 'win32') {
 }
 
 // ---- Konfigurace ----
-const GIT_PAGES_BASE = 'prednasky/'
+const GIT_PAGES_BASE = 'pva2_prednasky/'
 const GIT_PAGES_URL  = 'https://oa-pva2-syllabus.github.io/'
 const USE_SYMLINKS   = true          // když chceš raději kopírovat, dej false
 const SHARED_CACHE   = '.vite-cache' // do kořene repa
