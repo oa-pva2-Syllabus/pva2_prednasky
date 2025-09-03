@@ -120,6 +120,8 @@ Role: Projektový manažer, architekt, analytik a občasný vývojář
   *Řízení oprav a údržby kolejových vozidel.*
 
 ---
+hideInToc: true
+---
 
 # Realizované projekty
 
@@ -151,6 +153,20 @@ image: https://cover.sli.dev
 * Osvojit si schopnost číst, psát a porozumět programům
 * Získat programovací návyky jak programy psát
 
+---
+layout: center
+hideInToc: true
+---
+
+# Já vás programovat nenaučím.
+# To dokážete jen <span v-mark.circle.red>vy sami</span> – když budete <span v-mark.underline.orange>zkoušet, ptát se a dělat chyby</span>.
+
+---
+layout: center
+hideInToc: true
+---
+
+# Neřeknu Vám odpověď, ale <span v-mark.underline.orange>pomohu Vám najít cestu</span>, jak na ni přijít.
 
 ---
 layout: two-cols-header
