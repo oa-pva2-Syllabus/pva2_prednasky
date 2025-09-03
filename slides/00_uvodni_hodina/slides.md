@@ -63,17 +63,17 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 
 ## Kontakt
 
-* Výhradně jen Teamsy
-* přes bakaláře **nepište**
+* Výhradně jen Teamsy (přes bakaláře **nepište**)
 * Email: adam.fiser@wanex.cz
 * Tel: +420 777 052 248
-* Konzultace: místnost 217, kdykoli po domluvě
+* Konzultace: Teamsy, místnost 217, kdykoli po domluvě
 
 ---
 
 # Lektor ve zkratkách
 
 * SDLC, OpenRUP, Prince 3, Agile, UML
+* SIEM, NIS2, GDPR, ISO 27001
 * BI, BI Tibco, Jasper, Grafana, ETL
 * DB servery (MSSQL, PostgreSQL, MySQL)
 * SQL, PHP, Python, HTML, CSS, dev patterns, CD/CI, docker
@@ -81,26 +81,47 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 * SCM (Git, Github, svn)
 * MDM Airwatch, SDN Unifi, IoT a HW obecně
 * MS 365, Eset, GA, SEO, marketing a další
+
+---
+layout: two-cols-header
 ---
 
 # Realizované projekty
 
 Role: Projektový manažer, architekt, analytik a občasný vývojář
 
-- **Systémy a procesy pro DevOps**  
-  *Vybudování odd a zavedení procesů a systémů pro vývoj a nasazení aplikací.* Docker, Elastic, Sentry, Git/GitHub, Grafana, ... 
+::left::
 
-- **TAF TSI Implementation**  
-  *Implementace TAF TSI (Technická specifikace pro interoperabilitu týkající se telematických aplikací pro nákladní dopravu.).*
+- **NIS2 Compliance**  
+  *Zavedení procesů a systémů pro splnění požadavků směrnice NIS2 (Network and Information Systems Directive) v rámci kybernetické bezpečnosti.*
+
+- **Systémy a procesy pro DevOps**  
+  *Vybudování oddělení a zavedení procesů a systémů pro vývoj a nasazení aplikací.* Docker, Elastic, Sentry, Git/GitHub, Grafana, ...
+  
+- **TAF TSI (Technická specifikace pro interoperabilitu)**  
+  *železniční nákladní doprava<br>*
+  *intermodal a kontejnerová přeprava*
 
 - **Mzdový a personální systémy**  
   *Implementace systémů KS, Pema, Pers, Abra pro správu mezd a personálních dat.*
+
+::right::
+
+- **Mobilní terminály a MDM**  
+  *Aplikace pro řízení personálu v terénu* Workspace One, MobiDriver, Navigace
 
 - **Business Intelligence a reporting**  
   *Systémy pro analýzu a výměny dat, automatizace reportů*
 
 - **Řídicí systémy železniční dopravy**  
   *Vývoj operačních a kontrolních systémů pro železniční dopravu.* LWP, Eval, isdl, ...
+
+- **Systém správy oprav**  
+  *Řízení oprav a údržby kolejových vozidel.*
+
+---
+
+# Realizované projekty
 
 - **Customer Relationship Management (CRM)**  
   *Systémy pro správu vztahů se zákazníky a kalkulační systém.* kaplan, plusKlub
@@ -111,18 +132,9 @@ Role: Projektový manažer, architekt, analytik a občasný vývojář
 - **Systém pro seznámení s předpisy**  
   *Nástroj pro obeznámení zaměstnanců s interními směrnicemi a předpisy.* Doku, Manes, Alfresco
 
-- **Systém správy oprav**  
-  *Řízení oprav a údržby kolejových vozidel.*
-
 - **Container Terminal Management System**  
   *Řízení provozu kontejnerových terminálů.* Konti
 
-- **Mobilní terminály a MDM**  
-  *Aplikace pro řízení personálu v terénu* Workspace One, Airwatch, MobiDriver
-
-<!--
-Specializace HRM a rail logi systems
--->
 
 ---
 layout: image-right
@@ -148,9 +160,9 @@ layout: two-cols-header
 ::left::
 
 ## Známe z PVA1
-* Co je algoritmus, Pojmy, Rozdělení
+* Co je algoritmus, pojmy, rozdělení
 * Efektivita algoritmu
-* Způsoby zápisu, Vývojové diagramy
+* Způsoby zápisu, vývojové diagramy
 * Strukturované programování
 * Datové typy
 * Řídící struktury (cykly, podmínky, funkce)
@@ -174,16 +186,25 @@ layout: two-cols-header
 * Tkinter
 
 </v-click>
+
 ---
 
 # Organizace předmětu
 
 * Výuka probíhá formou přednášek a cvičení
 * Cvičení na sebe obsahově anebo výukově navazují
-* Výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
+* Přednášky, výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
 * Zdrojové kódy odevzdáváme výhradně přes GitHub
 * Absence - Po návratu dopracovat chybějící cvičení
 
+---
+
+# Pravidla
+
+- Jídlo a pití dle libosti, ale v rámci mezí slušného chování
+- Na toaletu v průběhu hodin, neptáme se, oznámíme, ale vždy jen jednotlivě
+- Všechny židle budou vždy dole
+- Na konci hodiny, židle nahoru, zavřená okna - odpovídá služba.
 
 ---
 
@@ -192,7 +213,16 @@ layout: two-cols-header
 Známky získáváte za:
 
 - Průběžná práce a aktivita v hodinách
-- Vypracované cvičení a úkoly (Cvičení na sebe navazují)
+- Všechny vypracované cvičení a úkoly (Cvičení na sebe navazují)
+- Projekty a skupinová cvičení
+- Opravy a zlepšení známky
+    - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
+    - Domluvě a vlastní iniciativě se meze nekladou.
+
+---
+
+## Testy
+
 - Testy
   - Výukové materiály dovoleny, není-li uvedeno jinak.
   - Kopírování, opisování a AI nikoli.
@@ -202,56 +232,37 @@ Známky získáváte za:
   - Žádáme minimálně 2 pracovní dny předem.
   - U delší objektivní absence dle domluvy.
   - Svou klasifikaci si hlídáte sami.
-- Opravy a zlepšení známky 
-  - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
-  - Domluvě a vlastní iniciativě se meze nekladou.
-
----
-
-# Pravidla
-
-- Jídlo a pití máte povoleno, ale v rámci mezí slušného chování
-- Na toaletu v průběhu hodin, neptáme se, oznámíme, ale vždy jen jednotlivě
-- Všechny židle budou vždy dole
-- Na konci hodiny, židle nahoru, zavřená okna - odpovídá služba.
 
 ---
 
 # Hodnotící škála
 
-| Rozsah  | Známka | Rozsah | Známka |
-|---------|-------|--------|-------|
-| 88-100% | 1     | 86-87% | 1-    |
-| 73-85%  | 2     | 71-72% | 2-    |
-| 56-70%  | 3     | 54-55% | 3-    |
-| 40-53%  | 4     | 38-39% | 4-    |
-| 0-37%   | 5     |        |       |
-
-Celkové hodnocení
-86–100 %: Výborný kód, plně funkční, čitelný, efektivní a bezpečný.
-71–85 %: Velmi dobrý kód, drobné chyby nebo nedostatky v čitelnosti či optimalizaci.
-54–70 %: Průměrný kód, obsahuje chyby nebo má špatnou strukturu.
-38–53 %: Nedokončený nebo špatně napsaný kód, neplní zadání.
-0–37 %: Neodevzdáno nebo zcela nefunkční řešení.
+| **Známka**           | **Rozsah** | **Popis**                                                                                                              |
+|----------------------|------------|------------------------------------------------------------------------------------------------------------------------|
+| **1 – výborný**      | 100–90%    | Kód je funkční, čitelný, efektivní, bezpečný a přehledně strukturovaný.<br>Dodržuje zadání a základní pravidla zápisu. |
+| **2 – chvalitebný**  | 89–75%     | Kód je funkční, obsahuje drobné chyby nebo nedostatky.<br>Zadání je splněno.                                           |
+| **3 – dobrý**        | 74–60%     | Kód je částečně funkční, obsahuje chyby nebo má výraznější nedostatky.<br>Zadání je splněno jen zčásti.                |
+| **4 – dostatečný**   | 59–40%     | Program je neúplný nebo funguje jen částečně. Obsahuje mnoho chyb, ale je vidět snaha o řešení.                        |
+| **5 – nedostatečný** | 39–0%      | Program nefunguje nebo zcela chybí. Zadání není splněno.                                                               |
 
 ---
 
 # Kritéria hodnocení
 
-1. Technická správnost:
-- Správná syntaxe
-- Funkčnost všech částí kódu
-- Bez zbytečných částí kódu
+1. Technická správnost
+   - Správná syntaxe
+   - Funkčnost všech částí kódu
+   - Bez zbytečných částí kódu
 
 2. Splnění zadání
-- Implementace všech požadovaných funkcionalit
+   - Implementace všech požadovaných funkcionalit
 
 3. Styl kódu:
-- Přehledné odsazení
-- Použití komentářů
+   - Přehledné odsazení
+   - Použití komentářů
 
 4. Bonusové body:
-- Originální a efektivní řešení
+   - Originální a efektivní řešení
 
 ---
 
@@ -291,7 +302,7 @@ image: /predstaveni.jpg
 Registrace kurzu na Moodle:
 
 * Přejděte na www.oa-opava.net
-* Zapište se do kurzu PVA2 2024/2025 - Programování a vývoj aplikací
+* Zapište se do kurzu **pva2 2025/2026** - Programování a vývoj aplikací
   (sekce Informační technologie\Adam Fišer\)
 * Nastavte si profilovou fotku.
 
