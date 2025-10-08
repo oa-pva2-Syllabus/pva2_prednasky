@@ -314,7 +314,7 @@ layout: section
 text = "Příliš žluťoučký kůň Řehoř úpěl ďábelské ódy"
 print(text.lower()) # všechny znaky budou malé
 
-name = "John".upper() # JOHN
+name = "Adam".upper() # ADAM
 print(name)
 ```
 
@@ -322,7 +322,11 @@ print(name)
 * Proměnné jsou vkládány do řetězce pomocí složených závorek `{}`
 
 ```python
-TODO
+name = "Adam"
+print("Hello, My name is {}.".format(name)) # Hello, My name is Adam.
+print("Hello, My name is {0}.".format(name)) # Hello, My name is Adam.
+print("Hello, My name is {fname}.".format(fname=name")) # Hello, My name is Adam.
+print("My name is {fname}, I'm {age}".format(fname = "Adam", age = 18)) # My name is Adam, I'm 18
 ```
 
 ---
