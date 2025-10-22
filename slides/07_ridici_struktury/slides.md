@@ -475,12 +475,18 @@ Výstup:
 Hello, World!
 ```
 
+---
 
+# Shrnutí
 
-
-
-
-
+- Porovnávací operátory slouží k porovnání hodnot
+- Logické operátory umožňují kombinovat více podmínek
+- Podmínky `if`, `elif`, `else` umožňují řídit tok programu na základě podmínek
+- Cyklus
+  - `for` umožňuje iteraci přes posloupnosti
+  - `while` opakuje blok kódu, dokud je splněna podmínka
+  - `do while` zajišťuje, že se blok kódu vykoná alespoň jednou
+- Řídící příkazy `break`, `continue`, `pass` a `else` umožňují další kontrolu toku cyklů
 
 
 
