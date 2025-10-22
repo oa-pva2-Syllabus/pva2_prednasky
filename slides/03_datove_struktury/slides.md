@@ -373,5 +373,13 @@ nazevTuple[index]
 ```
 
 ---
+
+# Shrnutí
+
+- Seznam `list` je `mutable` tj. lze měnit její obsah. Zápis čárkou oddělených hodnot v hranatých závorkách `[]`.
+- Slovník `dict` je `mutable` tj. lze měnit její obsah a  `key-value` tj. obsahuje klíče a hodnoty. Zápis klíčů a hodnot oddělených dvojtečkou a jednotlivé položky oddělené čárkou v složených závorkách `{}`.
+- Tuple `tuple` je `immutable` tj. **nelze měnit** její obsah. Zápis čárkou oddělených hodnot v kulatých závorkách `()`.
+
+---
 src: '../../pages/thanku.md'
 ---
