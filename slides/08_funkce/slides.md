@@ -98,6 +98,21 @@ c = sumTwoValues(3, 12)
 
 ---
 
+# Deklarace funkce s datovými typy
+
+- Při deklaraci funkce můžeme uvést datové typy parametrů a návratové hodnoty.
+- Slouží jako dokumentace a pomáhají s kontrolou kódu.
+- Datové typy se uvádí za název parametru za dvojtečku.
+- Návratový typ se uvádí za závorkou s parametry za šipkou `->`.
+- Datové typy mohou být libovolné, včetně vlastních tříd.
+
+```python
+def pozdrav(jmeno: str, cislo: int = 1) -> str:
+    return "Ahoj " + jmeno + ", tvoje číslo je " + str(cislo)
+```
+
+---
+
 # Volání funkce
 
 - Funkce se volá pomocí jejího názvu a závorek.
@@ -106,7 +121,7 @@ c = sumTwoValues(3, 12)
 
 ```python
 # funkce s názvem mojeFunkce
-def mojeFunkce():
+def mojeFunkce() -> str:
     # Kód musí být odsazen
     return "Ahoj"
 ```
@@ -126,7 +141,7 @@ print( mojeFunkce() ) # Vypíše Ahoj
 
 ```python
 # funkce s názvem mojeFunkce
-def mojeFunkce():
+def mojeFunkce() -> str:
     # Kód musí být odsazen
     return "Ahoj"
 ```
@@ -142,12 +157,12 @@ for i in range(5):
 # Parametry funkce
 
 - Parametry jsou hodnoty, které funkce přijímá a jsou nutné pro vykonání funkce.
-- Parametry jsou uvedeny v závorce a odděleny čárkou.
+- Uvádíme v závorce a odděleny čárkou.
 - Parametry mají pouze lokální platnost.
 - Můžeme nastavit výchozí hodnotu parametru přiřazení hodnoty za `=`
 
 ```python
-def pozdrav(jmeno):
+def pozdrav(jmeno: str = "Nezadáno") -> str:
     return "Ahoj " + jmeno
     
 print ( pozdrav("Adam") ) # Ahoj Adam
@@ -179,14 +194,14 @@ mojeFunkce("argument") # vrátí chybu TypeError
 
 ```python
 # Výchozí hodnota parametru
-def pozdrav(jmeno = "UN"):
+def pozdrav(jmeno: str = "UN") -> str:
     return "Ahoj " + jmeno
     
 print ( pozdrav() ) # Ahoj UN
 ```
 
 ```python
-def multiply(a, b=2, c=1):
+def multiply(a: int, b:int = 2, c: int = 1) -> int:
     return a * b + c
 
 multiply(3, 14, 10) # Všechny argumenty
@@ -234,14 +249,14 @@ cat('objetí', state='vrní')         # 1 poziční, 1 klíčové slovo
 # Může tedy v různých situacích vracet různé výsledky.
 
 exchange_rate = 26
-def convert_to_euro(crown):
+def convert_to_euro(crown: float) -> float:
     return crown * exchange_rate
 
 ```
 
 ```python
 # Takto uvedená funkce je již čistou funkcí.
-def convert_to_euro(crown, exchange_rate):
+def convert_to_euro(crown: float, exchange_rate: float) -> float:
     return crown * exchange_rate
 ```
 
@@ -255,12 +270,24 @@ def convert_to_euro(crown, exchange_rate):
 - Rekurze musí mít podmínku ukončení, aby se zabránilo nekonečnému volání.
 
 ```python
-def factorial(n):
+def factorial(n: int) -> int:
     if n == 1:
         return 1
     else:
         return n * factorial(n-1)
 ```
+
+---
+
+# Shrnutí
+
+- Funkce jsou bloky kódu, které lze opakovaně volat.
+- Funkce mohou přijímat parametry a vracet hodnoty.
+- Parametry mohou mít výchozí hodnoty a lze je předávat pomocí klíčových slov.
+- Parametry i výstupní hodnoty mohou mít určené datové typy.
+- Návratová hodnota se určuje pomocí klíčového slova `return`.
+- Funkce by měly být co nejvíce čisté, bez vedlejších efektů.
+- Rekurze je technika, kdy funkce volá sama sebe.
 
 ---
 src: '../../pages/thanku.md'
