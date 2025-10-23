@@ -102,22 +102,39 @@ c = sumTwoValues(3, 12)
 
 - Při deklaraci funkce můžeme uvést datové typy parametrů a návratové hodnoty.
 - Slouží jako dokumentace a pomáhají s kontrolou kódu.
-- Datové typy se uvádí za název parametru za dvojtečku.
+- Datové typy se uvádí za název parametru za dvojtečku tzn. `parametr: typ`.
+- Při použití výchozí hodnoty za rovnítkem `=` tzn. `parametr: typ = vychozi_hodnota`.
 - Návratový typ se uvádí za závorkou s parametry za šipkou `->`.
 - Datové typy mohou být libovolné, včetně vlastních tříd.
 
+````md magic-move
+```python
+def pozdrav(jmeno, cislo = 1):
+    return "Ahoj " + jmeno + ", tvoje číslo je " + str(cislo)
+```
 ```python
 def pozdrav(jmeno: str, cislo: int = 1) -> str:
     return "Ahoj " + jmeno + ", tvoje číslo je " + str(cislo)
 ```
+````
+
+---
+layout: cover
+background: https://cover.sli.dev
+---
+
+# Použití funkce
 
 ---
 
 # Volání funkce
 
-- Funkce se volá pomocí jejího názvu a závorek.
+- Funkce se používá voláním pomocí jejího názvu a závorek.
 - Pokud funkce přijímá parametry, je nutné je předat v závorkách.
 - Pokud funkce vrací hodnotu, je možné ji uložit do proměnné.
+- Hodnotu lze také přímo vypisovat nebo používat v dalších výrazech.
+- Ve funkci můžeme volat i jiné funkce.
+- Funkci `print()` ve funkcích nevoláme, ale předáváme jí hodnoty k vypsání.
 
 ```python
 # funkce s názvem mojeFunkce
@@ -136,6 +153,8 @@ print( mojeFunkce() ) # Vypíše Ahoj
 ```
 
 ---
+hideInToc: true
+---
 
 # Volání funkce
 
@@ -152,6 +171,25 @@ for i in range(5):
     mojeFunkce() 
 ```
 
+## Volání funkce bez uložení návratové hodnoty
+- Funkci můžeme volat i bez uložení návratové hodnoty.
+- To je užitečné, pokud nás zajímá pouze efekt funkce, nikoli její výstup.
+- Datový typ návratové hodnoty uvádíme jako `None`.
+
+```python
+# funkce s názvem pozdrav
+def pozdrav(jmeno: str) -> None:
+    print("Ahoj " + jmeno)
+```
+
+---
+layout: cover
+background: https://cover.sli.dev
+---
+
+# Parametry a argumenty
+
+
 ---
 
 # Parametry funkce
@@ -164,8 +202,11 @@ for i in range(5):
 ```python
 def pozdrav(jmeno: str = "Nezadáno") -> str:
     return "Ahoj " + jmeno
-    
+```
+
+```python
 print ( pozdrav("Adam") ) # Ahoj Adam
+print ( pozdrav() )       # Ahoj Nezadáno
 ```
 
 ---
@@ -220,6 +261,7 @@ multiply(3, c=10) # Předány dva argumenty a, c
 - Klíčová slova musí být uvedena po pozicích argumentů.
 - Klíčová slova mohou být v libovolném pořadí.
 
+````md magic-move
 ```python
 def cat(food, state='stále hladová', action='mňau'):
     print("-- Tahle kočka by nechtěla", action, end=' ')
@@ -235,6 +277,23 @@ cat(action='kousat', food='rybu')   # 2 kwarg
 cat('beef', 'šťastná', 'syčet')     # 3 poziční argument
 cat('objetí', state='vrní')         # 1 poziční, 1 klíčové slovo
 ```
+
+```python
+def cat(food: str, state: str='stále hladová', action:str='mňau') -> None:
+    print("-- Tahle kočka by nechtěla", action, end=' ')
+    print("kdybyste ji dali", food)
+    print("-- krásná srst", breed)
+    print("-- To je", state, "!")
+    
+    
+cat('kuře')                         # 1 argument dle pozice
+cat(food='kuře')                    # 1 argument klíčové slovo
+cat(food='rybu', action='kousat')   # 2 kwarg
+cat(action='kousat', food='rybu')   # 2 kwarg
+cat('beef', 'šťastná', 'syčet')     # 3 poziční argument
+cat('objetí', state='vrní')         # 1 poziční, 1 klíčové slovo
+```
+````
 
 ---
 
@@ -278,16 +337,67 @@ def factorial(n: int) -> int:
 ```
 
 ---
+layout: cover
+background: https://cover.sli.dev
+---
+
+# Dokumentace funkcí
+
+---
+
+# Dokumentační řetězce `docstring`
+
+- Docstring je speciální textový řetězec, který slouží k dokumentaci funkce, třídy nebo modulu.
+- Píše se hned za hlavičku funkce (pod deklaraci `def`).
+- Docstring se uzavírá do trojitých uvozovek `"""` nebo `'''`.
+- Pomáhá pochopit, co funkce dělá, jaké má parametry a co vrací.
+- Docstring lze zobrazit příkazem `help()` nebo přes .`__doc__`.
+- Dodržujeme konvenci [PEP 257](https://www.python.org/dev/peps/pep-0257/):
+  - Krátký popis funkce.
+  - Prázdný řádek.
+  - Detailní popis funkce.
+  - Seznam parametrů s jejich popisem.
+  - Popis návratové hodnoty.
+
+---
+
+# Příklad docstringu
+
+```python
+def pozdrav(jmeno: str) -> str:
+    """
+    Vrátí pozdrav pro zadané jméno.
+    
+    Parametry:
+        jmeno (str): jméno osoby, která má být pozdravena.
+    
+    Návratová hodnota:
+        str: text pozdravu.
+    """
+    return f"Ahoj {jmeno}!"
+```
+
+```python
+print( pozdrav("Adam") )
+print( help(pozdrav) )
+print( pozdrav.__doc__ )
+```
+
+---
 
 # Shrnutí
 
 - Funkce jsou bloky kódu, které lze opakovaně volat.
-- Funkce mohou přijímat parametry a vracet hodnoty.
-- Parametry mohou mít výchozí hodnoty a lze je předávat pomocí klíčových slov.
-- Parametry i výstupní hodnoty mohou mít určené datové typy.
-- Návratová hodnota se určuje pomocí klíčového slova `return`.
-- Funkce by měly být co nejvíce čisté, bez vedlejších efektů.
-- Rekurze je technika, kdy funkce volá sama sebe.
+- **Parametry** jsou proměnné uvedené v deklaraci funkce.
+  - mohou mít výchozí hodnoty
+  - lze je předávat pomocí klíčových slov kwArg v libovolném pořadí
+- **Argumenty** jsou hodnoty předané funkci při jejím volání.
+- Návratová hodnota se určuje pomocí klíčového slova `return`. 
+- Parametry i výstupní hodnoty mohou mít určené datové typy. Nemá-li funkce `return`, vrací `None`.
+- Popisujeme docstringem a držíme se konvence **PEP 257** – krátký popis, prázdný řádek, detaily, parametry, návratová hodnota.
+- Funkce by měly být co nejvíce čisté, **bez vedlejších efektů**.
+- **Rekurze** je technika, kdy funkce volá sama sebe.
+
 
 ---
 src: '../../pages/thanku.md'
