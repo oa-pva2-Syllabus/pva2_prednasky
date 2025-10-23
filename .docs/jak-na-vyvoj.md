@@ -25,6 +25,18 @@ Zdrojový kód s maximální výškou a scrollboxem
 php {*}{maxHeight:'400px'}
 ```
 
+Zdrojový kód s transicí mezi kroky
+````md magic-move
+```js
+console.log(`Step ${1}`)
+```
+```js
+console.log(`Step ${1 + 1}`)
+```
+```ts
+console.log(`Step ${3}` as string)
+```
+````
 
 Zvýraznění textu
 - číslovat  `v-mark.box.red="1"`
@@ -62,6 +74,14 @@ background: https://cover.sli.dev
 ---
 ```
 
+Dělící stránka s textem doprostřed
+```md
+---
+layout: statement
+---
+
+# Nadpis
+```
 
 Dvousloupcový layout
 ```md
