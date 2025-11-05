@@ -246,7 +246,6 @@ Výstup:
 ```python
 # funkce range generuje sekvenci celých čísel
 range(start, stop, step)
-Stop je povinný
 
 # cyklus
 # Funkce range(5) vrací seznam[0,1,2,3,4]
@@ -434,6 +433,13 @@ Konec
 ```
 
 ---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# While
+
+---
 
 # Cyklus `while`
 
@@ -463,17 +469,39 @@ print("Konec")
 
 - Cyklus do while je podobný cyklu while, ale podmínka se kontroluje až po prvním provedení bloku kódu.
 - Používá, když chcete, aby se blok kódu vykonal alespoň jednou, i když podmínka není splněna.
+- Python nemá vestavěnou konstrukci do while, ale můžeme ji simulovat pomocí cyklu while a příkazu break.
 
 ```python
 while True:
-    print("Hello, World!")
-    break
+    # vykonávaný kód cyklu je odsazen
+    # tento kód se opakuje, dokud není splněna podmínka
+    if not podminka:
+        break
+```
+
+---
+hideInToc: true
+
+# Cyklus do while - příklad
+
+```python
+count = 0
+while True:
+    print("Počet je:", count)
+    count += 1
+    if count >= 5:
+        break
 ```
 
 Výstup:
 ```python
-Hello, World!
+Počet je: 0
+Počet je: 1
+Počet je: 2
+Počet je: 3
+Počet je: 4
 ```
+
 
 ---
 
