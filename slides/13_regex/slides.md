@@ -28,7 +28,7 @@ export:
 #== Slide Info
 src: '../../pages/index.md'
 title: "Regulární výrazy"
-exportFilename: "12_regex"
+exportFilename: "13_regex"
 titleTemplate: "PVA2 %s by Adam Fišer"
 info: |
   ## PVA2 Programování a vývoj aplikací

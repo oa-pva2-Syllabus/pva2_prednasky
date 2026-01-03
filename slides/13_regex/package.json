@@ -1,5 +1,5 @@
 {
-  "name": "12_regex",
+  "name": "13_regex",
   "title": "Regulární výrazy",
   "author": { "name": "Adam Fišer" },
   "type": "module",
@@ -8,6 +8,6 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
-    "export": "slidev export --output ../12_regex.pdf"
+    "export": "slidev export --output ../13_regex.pdf"
   }
 }
