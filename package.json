@@ -15,9 +15,9 @@
   ],
   "packageManager": "pnpm@10.15.0",
   "devDependencies": {
-    "@slidev/cli": "^52.9.1",
+    "@slidev/cli": "^52.11.1",
     "@slidev/theme-default": "^0.25.0",
-    "@slidev/types": "^52.9.1",
+    "@slidev/types": "^52.11.1",
     "@iconify-json/material-symbols": "^1.2.48",
     "@iconify-json/mdi": "^1.2.3",
     "fs-extra": "^11.3.2",
