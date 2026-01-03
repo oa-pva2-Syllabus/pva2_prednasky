@@ -49,7 +49,7 @@ layout: default
 
 # Výjimky
 
-- Výjimkou `Exception` označujeme situaci, kdy program narazí na chybu.
+- Výjimkou `Exception` je mechanismus, kterým Python oznamuje, že během běhu programu nastala chyba.
 - Mohou být vyvolány programem nebo interpretrem.
 - Takovou chybu se ve vývoji snažíme ošetřit zachycením výjimky `catch`
 - Pokud výjimku nezachytíme, program skončí s chybou.
@@ -74,37 +74,6 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
----
-
-# Jaké chyby existují?
-
-https://docs.python.org/3/library/exceptions.html#exception-hierarchy
-
-
-- `ArithmeticError` - Obecná aritmetická chyba
-    - `ZeroDivisionError` - Dělení nulou
-    - `OverflowError` - Přetečení
-    - `FloatingPointError` - Chyba s pohyblivou řádovou čárkou
-
-- `Syntax Error` - Chyba syntaxe
-  - `IndentationError` - Chyba odsazení
-  - `TabError` - Chyba tabulátoru (kombinování mezer a tabulátorů v odsazení)
-
----
-
-# Jaké chyby existují?
-
-- `NameError` - Neexistující proměnná
-- `TypeError` - Nesprávný typ proměnné
-- `ValueError` - Nesprávná hodnota proměnné
-- `IndexError` - Index mimo rozsah
-- `KeyError` - Klíč neexistuje
-- `FileNotFoundError` - Soubor nenalezen
-- `ImportError` - Chyba při importu modulu
-
-
----
-
 # Jak zachytit výjimku?
 
 - Výjimku zachytíme pomocí bloku `try` a `except`
@@ -123,9 +92,82 @@ except ZeroDivisionError:
 
 ---
 
+---
+
+# Jak číst traceback?
+
+- Traceback ukazuje posloupnost volání funkcí, které vedly k chybě
+- Začíná nejnovější volání funkcí a končí nejstarším
+- Uvádí název souboru, číslo řádku a kód, který způsobil chybu
+- Na konci je uveden typ výjimky a zpráva o chybě
+
+```python
+Traceback (most recent call last):
+  File "test.py", line 3, in <module>
+    print(a/b)
+ZeroDivisionError: division by zero
+```
+
+- 1️⃣ `File "test.py", line 3` - Název souboru a číslo řádku kde nastala chyba ➡️ Sem se máme při opravě kódu podívat jako první
+- 2️⃣ `print(a/b)` - Konkrétní řádek kódu, který způsobil výjimku
+- 3️⃣ `ZeroDivisionError: division by zero` - Říká nám, jaký druh chyby nastal a upřesňuje, že se pokoušíme dělit nulou
+
+---
+
+# SyntaxError ≠ výjimka za běhu
+
+> Ne každou chybu lze zachytit
+
+- SyntaxError nelze zachytit pomocí try/except
+- try/except řeší jen chyby za běhu programu
+
+```python
+# Tohle je SyntaxError – program se ani nespustí
+if True
+    print("Ahoj")
+```
+
+```python
+# Tohle je výjimka za běhu
+print(10 / 0)
+```
+
+---
+
+# Jaké chyby existují?
+
+https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+
+
+- `ArithmeticError` - Obecná aritmetická chyba
+    - `ZeroDivisionError` - Dělení nulou
+    - `OverflowError` - Přetečení
+    - `FloatingPointError` - Chyba s pohyblivou řádovou čárkou
+
+- `SyntaxError` - Chyba syntaxe
+  - `IndentationError` - Chyba odsazení
+  - `TabError` - Chyba tabulátoru (kombinování mezer a tabulátorů v odsazení)
+
+---
+
+# Jaké chyby existují?
+
+- `NameError` - Neexistující proměnná
+- `TypeError` - Nesprávný typ proměnné
+- `ValueError` - Nesprávná hodnota proměnné
+- `IndexError` - Index mimo rozsah
+- `KeyError` - Klíč neexistuje
+- `FileNotFoundError` - Soubor nenalezen
+- `ImportError` - Chyba při importu modulu
+
+
+---
+
 # Jak zachytit všechny výjimky?
 
-- Pokud chceme zachytit všechny výjinmky, můžeme použít blok `except` bez specifikace typu výjimky
+> Pozor, typický příklad špatné praxe!
+
+- Pokud chceme zachytit všechny výjimky, můžeme použít blok `except` bez specifikace typu výjimky
 - Použitím `as e` uložíme výjimku do proměnné `e` a tu následně zobrazíme uživateli
 
 ```python
@@ -137,6 +179,32 @@ try:
 # Zachytíme všechny výjimky a uložíme je do proměnné e
 except Exception as e:
     print("Chyba:", e)
+```
+
+---
+
+# Špatná praxe - chytání všeho
+
+- Někdy se můžeme setkat s kódem, který chytá všechny výjimky bez rozlišení
+- Toto není doporučené, protože to může skrýt skutečné chyby v kódu
+- Měli bychom vždy zachytávat konkrétní výjimky, které očekáváme
+
+```python
+try:
+    open("data.txt")
+except Exception:
+    print("Něco se pokazilo")
+```
+
+- nevíme co
+- špatně se ladí
+- může skrýt chybu v logice
+
+> Chytej co nejkonkrétnější výjimku, kterou očekáváš.
+
+```python
+except FileNotFoundError:
+    print("Soubor neexistuje")
 ```
 
 ---
