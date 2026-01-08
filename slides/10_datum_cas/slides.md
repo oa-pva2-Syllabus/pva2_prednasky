@@ -106,7 +106,7 @@ print("Den: " + str(aktualniDatum.day))
 # Třída `time`
 
 - Třída `time` reprezentuje čas.
-- Čas je reprezentován pomocí tří atributů:
+- Čas je reprezentován pomocí atributů:
   - `hour` - hodina
   - `minute` - minuta
   - `second` - sekunda
@@ -234,10 +234,13 @@ d1 > d2 # False
 # Třída `timedelta`
 
 - Třída `timedelta` reprezentuje časový interval.
-- Časový interval je reprezentován pomocí tří atributů:
-  - days - dny
-  - seconds - sekundy
-  - microseconds - mikrosekundy
+- Časový interval je reprezentován pomocí atributů:
+  - `days` - dny
+  - `weeks` - týdny
+  - `hours` - hodiny
+  - `minutes` - minuty
+  - `seconds` - sekundy
+  - `microseconds` - mikrosekundy
 
 ```python
 from datetime import timedelta
