@@ -51,7 +51,7 @@ layout: default
 
 - Výjimkou `Exception` je mechanismus, kterým Python oznamuje, že během běhu programu nastala chyba.
 - Mohou být vyvolány programem nebo interpretrem.
-- Takovou chybu se ve vývoji snažíme ošetřit zachycením výjimky `catch`
+- Takovou chybu se ve vývoji snažíme ošetřit zachycením výjimky `except` blokem.
 - Pokud výjimku nezachytíme, program skončí s chybou.
 
 
@@ -74,6 +74,8 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
+---
+
 # Jak zachytit výjimku?
 
 - Výjimku zachytíme pomocí bloku `try` a `except`
@@ -90,7 +92,7 @@ except ZeroDivisionError:
     print("Nelze dělit nulou")
 ```
 
----
+
 
 ---
 
@@ -248,8 +250,8 @@ try:
     print( a/b ) # Dělení nulou
 except ZeroDivisionError:
     print("Nelze dělit nulou")
-except Exception as e:
-    print("Chyba:", e)
+except ArithmeticError as e:
+    print("Aritmetická chyba:", e)
 else:
     print("Vše proběhlo v pořádku")
 finally:
