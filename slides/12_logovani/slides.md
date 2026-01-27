@@ -119,17 +119,6 @@ logging.critical("Kritická chyba")
 > Ve výchozím nastavení se DEBUG a INFO nezobrazí
 
 ---
-
-# Nastavení úrovně logování
-
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-logging.debug("Debug zpráva, která se už zobrazí")
-logging.info("Program se spustil")
-```
-
----
 layout: two-cols-header
 ---
 
@@ -172,6 +161,18 @@ layout: two-cols-header
 - program nemůže pokračovat
 - `logging.critical("Nedostatek paměti, program bude ukončen")`
 - `logging.critical("Nelze pokračovat – chybí konfigurační soubor")`
+
+---
+
+# Nastavení úrovně logování
+
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logging.debug("Debug zpráva, která se už zobrazí")
+logging.info("Program se spustil")
+```
+
 
 ---
 
