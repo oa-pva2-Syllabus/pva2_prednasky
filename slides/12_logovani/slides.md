@@ -200,9 +200,10 @@ except ZeroDivisionError:
 import logging
 
 logging.basicConfig(
-    level=logging.INFO,
-    filename="app.log",
-    filemode="a"
+    level=logging.INFO, # Minimální úroveň logování
+    filename="app.log", # Definice názvu souboru
+    filemode="a" # Režim přidávání (append)
+    encoding="utf-8" # Nastavení kódování výstupu pro korektní zobrazení znaků vč. češtiny
 )
 logging.info("Toto se zapíše do souboru app.log")
 ```
