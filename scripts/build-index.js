@@ -68,7 +68,7 @@ const readmeLines = [
     '|---:|-----------|-----|',
     ...entries.map((e, i) => {
         const n = String(i + 1).padStart(width, '0')
-        const live = `https://oa-pva4-syllabus.github.io/pva4_prednasky/${e.name}/`
+        const live = `https://oa-pva2-syllabus.github.io/pva2_prednasky/${e.name}/`
         const pdf  = `${live}${e.name}.pdf`
         return `| ${n} | [${e.title}](${live}) | [PDF](${pdf}) |`
     }),
