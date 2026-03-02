@@ -53,8 +53,6 @@ layout: default
 - Umožňuje rychle odhalit chyby po úpravách kódu.
 - Zvyšuje spolehlivost programu.
 
-
-
 ---
 
 # Proč testujeme?
@@ -63,6 +61,10 @@ layout: default
 - Ušetříme čas při hledání chyb.
 - Pomáhá udržovat kód čistý a přehledný.
 - Klíčové při větších projektech nebo spolupráci ve skupině.
+- Zrychlují vývoj - méně klikání a opakování.
+- Mám jistotu, když upravím kód, nerozbiju něco jiného?
+
+> **Chyby jsou drahé**: čím později chybu najdeš, tím víc stojí.
 
 ---
 
@@ -72,6 +74,26 @@ layout: default
 - **Integrační testy** - testují, jak jednotlivé části kódu spolu komunikují.
 - **Funkční testy** - testují, zda program dělá to, co má.
 - **End-to-end testy** - testují celý program jako celek.
+
+---
+
+# Základní princip: Triple A (AAA)
+
+**"Arrange – Act – Assert"**
+
+1. Arrange - Připrav vstupy a prostředí
+2. Act - Zavolej testovanou funkci
+3. Assert Ověř výsledek
+
+```python
+def test_add():
+    # Arrange
+    a, b = 2, 3
+    # Act
+    result = add(a, b)
+    # Assert
+    assert result == 5
+```
 
 ---
 
@@ -88,25 +110,46 @@ layout: default
 
 📦 Instalace (pokud ještě není):
 ```bash
-pip install pytest
+python -m pip install pytest
 ```
 
+---
+
+# Struktura projektu
+
+```
+projekt/
+  src/
+    kalkulacka.py
+  tests/
+    test_kalkulacka.py
+```
 ---
 
 # Základní test
 
 ```python
-# soubor: test_matematika.py
+# soubor: src/kalkulacka.py
 
 def secti(a, b):
     return a + b
+
+```
+
+
+```python
+# soubor: tests/test_kalkulacka.py
+
+from src.kalkulacka import secti
 
 def test_secti():
     assert secti(2, 3) == 5
 ```
 
-- Test je obyčejná funkce, která začíná na `test_`.
+- Test je standardní funkce, která začíná prefixem `test_`.
 - `assert` porovnává skutečný výsledek s očekávaným.
+- ✅ Test projde, pokud je výraz assert ... pravda.
+- ❌ Pokud ne, pytest vypíše očekávané vs. skutečné hodnoty.
 
 ---
 
@@ -119,7 +162,7 @@ pytest
 
 - Spuštění konkrétního testu:
 ```bash
-pytest test_matematika.py
+pytest test_kalkulacka.py
 ```
 
 - Spuštění testů včetně `print` výstupů:
@@ -131,9 +174,9 @@ pytest -s
 
 ## Spuštění testu v PyCharmu
 
-1. Otevři soubor s testem (např. `test_matematika.py`)
+1. Otevři soubor s testem (např. `test_kalkulacka.py`)
 2. Klikni pravým tlačítkem kamkoliv do souboru.
-3. Vyber **Run 'pytest in test_matematika'**
+3. Vyber **Run 'pytest in test_kalkulacka'**
 
 💡 Výsledek testu se zobrazí dole v panelu *Run/Test Results*.
 
@@ -186,7 +229,7 @@ layout: two-cols-header
 
 `faktura.py`
 ```python
-def vypocet_ceny_z_dph(cena_bez_dph, sazba_dph):
+def vypocet_ceny_s_dph(cena_bez_dph, sazba_dph):
     if cena_bez_dph < 0:
         raise ValueError("Cena nesmí být záporná")
     if sazba_dph not in [10, 15, 21]:
@@ -201,21 +244,21 @@ def vypocet_ceny_z_dph(cena_bez_dph, sazba_dph):
 `test_faktura.py`
 ```python
 import pytest
-from faktura import vypocet_ceny_z_dph
+from faktura import vypocet_ceny_s_dph
 
 def test_sazba_21_procent():
-    assert vypocet_ceny_z_dph(100, 21) == 121.00
+    assert vypocet_ceny_s_dph(100, 21) == 121.00
 
 def test_sazba_15_procent():
-    assert vypocet_ceny_z_dph(200, 15) == 230.00
+    assert vypocet_ceny_s_dph(200, 15) == 230.00
 
 def test_neplatna_sazba():
     with pytest.raises(ValueError):
-        vypocet_ceny_z_dph(100, 5)
+        vypocet_ceny_s_dph(100, 5)
 
 def test_zaporna_cena():
     with pytest.raises(ValueError):
-        vypocet_ceny_z_dph(-50, 21)
+        vypocet_ceny_s_dph(-50, 21)
 ```
 
 ---
@@ -282,7 +325,50 @@ def secti(a, b):
 ✅ Test projde, funkce je hotová.
 
 
+---
+layout: image-right
+image: https://cover.sli.dev
+---
 
+# Coverage
+
+---
+
+# Co je coverage?
+
+- Pokrytí = kolik řádků větví kódu prošly testy.
+- Neznamená to automaticky kvalitu, ale pomáhá odhalit netestovaná místa.
+
+```bash
+pip install pytest-cov
+pytest --cov=app --cov-report=term-missing
+```
+
+---
+
+# Výstup coverage
+
+```
+Name          Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------
+app.py           10      2    80%   5-6
+```
+
+---
+
+# Jak testovat?
+
+## ✅ DO
+- jeden test = jedna věc
+- testuj hranice (0, 1, prázdný seznam, dlouhé řetězce)
+- testuj typické případy i chybové stavy
+- piš testy tak, aby byly rychlé a stabilní
+
+
+## ❌ DON'T
+- **nebal vše do jednoho obřího testu**
+- netestuj implementační detaily (když se může změnit bez změny chování)
+- nepiš testy závislé na pořadí nebo na aktuálním čase
 
 
 ---
