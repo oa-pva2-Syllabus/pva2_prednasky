@@ -196,11 +196,13 @@ def test_secti():
 
 PyCharm vypíše:
 ```
->       assert 5 == 6
-E       AssertionError
+    def test_secti():
+>       assert secti(2, 3) == 6
+E       assert 5 == 6
+E        +  where 5 = secti(2, 3)
 ```
 
-➡ Pomáhá rychle najít chybu.
+> Výstup chyb ➡ Pomáhá nám rychle najít chybu.
 
 ---
 
