@@ -131,7 +131,7 @@ projekt/
 ```python
 # soubor: src/kalkulacka.py
 
-def secti(a, b):
+def secti(a: int, b: int) -> int:
     return a + b
 
 ```
@@ -209,7 +209,7 @@ E       AssertionError
 ```python
 import pytest
 
-def deleni(a, b):
+def deleni(a: int, b: int) -> float:
     return a / b
 
 def test_deleni_nulou():
@@ -229,7 +229,7 @@ layout: two-cols-header
 
 `faktura.py`
 ```python
-def vypocet_ceny_s_dph(cena_bez_dph, sazba_dph):
+def vypocet_ceny_s_dph(cena_bez_dph: float, sazba_dph: int) -> float:
     if cena_bez_dph < 0:
         raise ValueError("Cena nesmí být záporná")
     if sazba_dph not in [10, 15, 21]:
