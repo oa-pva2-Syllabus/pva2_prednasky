@@ -27,7 +27,7 @@ export:
 
 #== Slide Info
 src: '../../pages/index.md'
-title: "Testování a CI/CD"
+title: "Pokročilé testování a CI/CD"
 exportFilename: "38_testovani_actions"
 titleTemplate: "PVA2 %s by Adam Fišer"
 info: |
@@ -50,10 +50,13 @@ layout: default
 # Úvod
 
 - Co je CI/CD?
+- Závislosti
 - Seznámení s GitHub Actions
 - Konfigurace GitHub Actions pro pytest
+- Využití dekorátorů `@pytest.fixture` a `@pytest.mark.parametrize`
 - Praktické ukázky
 
+> 💡 **Bez CI/CD kontroluješ kód ručně — a to tě bude bolet.**
 
 ---
 
@@ -87,6 +90,63 @@ graph TD
 
 </div>
 </div>
+
+---
+layout: image-left
+image: https://cover.sli.dev
+---
+# Závislosti
+
+---
+ 
+# Závislosti (dependencies)
+ 
+<div class="grid grid-cols-2 gap-4">
+<div>
+ 
+## Co jsou závislosti?
+- Externí knihovny, které tvůj kód potřebuje ke spuštění
+- Nejsou součástí standardní Pythonu — musíš je doinstalovat
+- Příklady: `pytest`, `requests`, `flask`, `numpy`
+
+**Proč je to důležité pro CI/CD?**
+- Virtuální stroj v GitHub Actions **nemá nic předinstalováno**
+- Závislosti musíme nainstalovat jako jeden z prvních kroků workflow
+
+</div>
+<div>
+
+## Jak se instalují?
+```bash
+# Instalace jedné knihovny
+pip install pytest
+ 
+# Instalace více najednou ze souboru
+pip install -r requirements.txt
+```
+ 
+## Soubor `requirements.txt`
+- Textový soubor se seznamem závislostí projektu
+- Každá knihovna na samostatném řádku
+- Volitelně s uvedením verze
+ 
+```text
+pytest
+pytest-cov
+requests>=2.28.0
+flask==3.0.0
+```
+ 
+> 💡 `requirements.txt` **patří do repozitáře** — bez něj GitHub Actions neví, co nainstalovat.
+ 
+</div>
+</div>
+
+---
+layout: image-left
+image: https://cover.sli.dev
+---
+# GitHub Actions
 
 ---
 
@@ -126,7 +186,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.12'
     - name: Run tests
       run: |
         pip install pytest
@@ -135,6 +195,15 @@ jobs:
 
 </div>
 </div>
+
+<!--
+Jak číst yaml
+1. name - Nejprve zjistím, jak se workflow jmenuje v GitHub Actions.
+2. on - Potom hledám, kdy se workflow spustí. Tady po push a při pull_request na větev main.
+3. jobs - Workflow obsahuje jeden job s názvem test.
+4. runs-on - Job poběží na Linuxu (ubuntu-latest).
+5. steps - Nakonec sleduji jednotlivé kroky, které se provedou za sebou.
+-->
 
 ---
 
@@ -161,15 +230,17 @@ jobs:
 </div>
 <div>
 
-```mermaid
+```mermaid {theme: 'default', scale: 0.85}
 graph TD
-    A[Workflow] --> B[Event]
+    A([🔔 Event<br/>push / PR / časovač]) -->|spouští| B[Workflow]
     B --> C[Job 1]
     B --> D[Job 2]
     C --> E[Step 1.1]
     C --> F[Step 1.2]
     D --> G[Step 2.1]
     D --> H[Step 2.2]
+    style A fill:#f0f4ff,stroke:#4a6fa5
+    style B fill:#e8f5e9,stroke:#388e3c
 ```
 
 </div>
@@ -188,7 +259,7 @@ graph TD
 3. Definujte workflow
 4. Push do repozitáře
 
-## Obsah konfigurce
+## Obsah konfigurace
 - Událost spuštění
 - Virtuální prostředí
 - Kroky pro instalaci závislostí
@@ -197,7 +268,7 @@ graph TD
 </div>
 <div>
 
-```yaml {*}{maxHeight:'450px'}
+```yaml {*}{maxHeight:'400px'}
 name: Python tests
 
 on:
@@ -214,7 +285,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.12'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -229,8 +300,15 @@ jobs:
 </div>
 
 ---
+layout: image-left
+image: https://cover.sli.dev
+---
 
 # První praktická ukázka
+
+---
+
+# Struktura projektu
 
 Mějme jednoduchý projekt s následující strukturou:
 
@@ -249,7 +327,7 @@ my_project/
 └── README.md
 ```
 
----
+> Všechny naše nově vytvořené anebo upravené projekty **budou dodržovat tuto strukturu**.
 
 ---
 
@@ -276,45 +354,154 @@ class Calculator:
 
 # Testovací kód `test_calculator.py`
 
-```python
+```python {*}{maxHeight:'400px'}
 import pytest
 from src.calculator import Calculator
-
-def test_add():
-    calc = Calculator()
-    assert calc.add(1, 2) == 3
-    assert calc.add(-1, 1) == 0
-    assert calc.add(-1, -1) == -2
-
-def test_subtract():
-    calc = Calculator()
-    assert calc.subtract(3, 2) == 1
-    assert calc.subtract(1, 1) == 0
-    assert calc.subtract(-1, -1) == 0
-
-def test_multiply():
-    calc = Calculator()
-    assert calc.multiply(2, 3) == 6
-    assert calc.multiply(-2, 3) == -6
-    assert calc.multiply(-2, -3) == 6
-
-def test_divide():
-    calc = Calculator()
-    assert calc.divide(6, 3) == 2
-    assert calc.divide(-6, 3) == -2
-    assert calc.divide(-6, -3) == 2
-    
-def test_divide_by_zero():
-    calc = Calculator()
+ 
+ 
+@pytest.fixture
+def calc():
+    return Calculator()
+ 
+ 
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 2, 3),
+    (-1, 1, 0),
+    (-1, -1, -2),
+])
+def test_add(calc, a, b, expected):
+    assert calc.add(a, b) == expected
+ 
+ 
+@pytest.mark.parametrize("a, b, expected", [
+    (3, 2, 1),
+    (1, 1, 0),
+    (-1, -1, 0),
+])
+def test_subtract(calc, a, b, expected):
+    assert calc.subtract(a, b) == expected
+ 
+ 
+@pytest.mark.parametrize("a, b, expected", [
+    (2, 3, 6),
+    (-2, 3, -6),
+    (-2, -3, 6),
+])
+def test_multiply(calc, a, b, expected):
+    assert calc.multiply(a, b) == expected
+ 
+ 
+@pytest.mark.parametrize("a, b, expected", [
+    (6, 3, 2),
+    (-6, 3, -2),
+    (-6, -3, 2),
+])
+def test_divide(calc, a, b, expected):
+    assert calc.divide(a, b) == expected
+ 
+ 
+def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Nelze dělit nulou"):
         calc.divide(6, 0)
 ```
 
 ---
+layout: image-left
+image: https://cover.sli.dev
+---
+
+# Pytest a jeho funkce
+> Nové konstrukce v testovacím kódu
+
+---
+
+# Dekorátor `@pytest.fixture`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+- Bez `fixture` opakuje se deklarace volání každé třídy
+
+```python
+# Bez fixture — opakuješ se v každém testu
+def test_add():
+    calc = Calculator()   # ← znovu
+    assert calc.add(1, 2) == 3
+
+def test_subtract():
+    calc = Calculator()   # ← znovu
+    assert calc.subtract(3, 1) == 2
+```
+</div>
+<div>
+
+### `@pytest.fixture`
+Funkce označená tímto **dekorátorem** se spustí **před každým testem** a předá mu výsledek jako parametr. Používá se pro přípravu sdílených objektů — vytvoříš instanci jednou, ne v každém testu zvlášť.
+
+
+```python
+@pytest.fixture
+def calc():
+    return Calculator() # pytest si "zapamatuje"
+ 
+# pytest předá calc automaticky jako argument
+def test_add(calc):
+    assert calc.add(1, 2) == 3
+ 
+def test_subtract(calc):
+    assert calc.subtract(3, 1) == 2
+```
+
+</div>
+</div>
+ 
+---
+
+# Decorátor `@pytest.mark.parametrize`
+
+- Nahrazuje více assertů v jedné funkci — místo toho spustí test **jednou pro každou sadu hodnot**. Každý případ selže nebo projde samostatně.
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+### Jak nepsat (bez použití dekorátoru)
+```python {*}{maxHeight:'400px'}
+
+def test_add(calc):
+    assert calc.add(1, 2) == 3   # ← více assertů
+    assert calc.add(-1, 1) == 0  #   v jedné funkci
+    
+# nebo tohoto:
+def test_add_1_2(calc):
+    assert calc.add(1, 2) == 3   # ← více assertů
+    
+def test_add_m1_1(calc):
+    assert calc.add(-1, 1) == 0  #   v jedné funkci
+```
+
+</div>
+<div>
+
+### Použití dekorátoru
+```python {*}{maxHeight:'400px'}
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 2, 3),
+    (-1, 1, 0),
+    (-1, -1, -2),
+])
+def test_add(calc, a, b, expected):
+    assert calc.add(a, b) == expected
+```
+
+</div>
+</div>
+
+
+---
 
 # GitHub Actions workflow `pytest.yml`
 
-```yaml {*|1|3-7|9-11|9-14|16-19|21-25|27-29|31-37|*}{maxHeight:'450px'}
+```yaml {*|1|3-7|9-11|9-14|16-19|21-25|27-29|31-37|*}{maxHeight:'400px'}
 name: Python tests
 
 on:
@@ -351,12 +538,15 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         file: ./coverage.xml
-        fail_ci_if_error: true
+        fail_ci_if_error: false # Neselže, pokud není codecov nakonfigurován
 ```
 
 ---
 
 # Co se stane po push do repozitáře?
+
+<div class="grid grid-cols-2 gap-4">
+<div>
 
 1. GitHub detekuje nový commit v repozitáři
 2. Detekuje konfigurační soubor workflow
@@ -367,6 +557,25 @@ jobs:
 7. Spustí testy a vygeneruje report pokrytí
 8. Nahraje report pokrytí na službu Codecov (pokud je nastavena)
 9. Oznámí výsledky (úspěch/selhání)
+
+
+</div>
+<div>
+```mermaid {theme: 'default', scale: 0.55}
+graph TD
+    A[git push] --> B[GitHub detekuje commit]
+    B --> C[Spustí virtuální stroj]
+    C --> D[Checkout repozitáře]
+    D --> E[Instalace Pythonu 3.12]
+    E --> F[Instalace závislostí]
+    F --> G[pytest]
+    G -->|✅ Prošlo| H[Zelená fajfka]
+    G -->|❌ Selhalo| I[Červený křížek]
+    style H fill:#e8f5e9,stroke:#388e3c
+    style I fill:#ffebee,stroke:#c62828
+```
+</div>
+</div>
 
 ---
 
@@ -399,6 +608,55 @@ graph TD
     G --> A
 ```
 
+</div>
+</div>
+
+---
+ 
+# Nejčastější chyby a jak je řešit
+ 
+<div class="grid grid-cols-2 gap-4">
+<div>
+ 
+❌ `ModuleNotFoundError`
+- Chybí `requirements.txt` nebo není nainstalován
+- **Řešení:** zkontroluj krok `Install dependencies`
+
+❌ `No tests ran`
+- pytest nenašel žádné testovací soubory
+- **Řešení:** soubory musí začínat `test_` a funkce taky
+
+❌ Codecov krok selže bez registrace
+- `fail_ci_if_error: true` hodí chybu, i když testy prošly
+- **Řešení:** nastav `fail_ci_if_error: false` nebo krok odstraň
+
+</div>
+<div>
+
+❌ `ImportError` při importu z `src/`
+- Chybí `__init__.py` v adresáři `src/` nebo `tests/`
+- **Řešení:** vytvoř prázdný soubor `__init__.py` nebo použij decorátor `@pytest.fixture`
+
+
+```yaml {*}{maxHeight:'1000px'}
+# Špatně — chybí __init__.py, pytest nenajde modul
+from calculator import Calculator
+ 
+# Správně — relativní import fungující se strukturou src/
+from src.calculator import Calculator
+```
+ 
+```
+# Zkontroluj strukturu projektu:
+my_project/
+├── src/
+│   ├── __init__.py   ← nutné (nebo použít dekorátor)!
+│   └── calculator.py
+└── tests/
+    ├── __init__.py   ← nutné (nebo použít dekorátor)!
+    └── test_calculator.py
+```
+ 
 </div>
 </div>
 
