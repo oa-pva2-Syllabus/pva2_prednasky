@@ -1,9 +1,9 @@
 ---
 #== Layout
 theme: default
-background: https://cover.sli.dev # https://unsplash.com/collections/94734566/slidev
-transition: slide-left #https://sli.dev/guide/animations#slide-transitions
-mdc: true # https://sli.dev/guide/syntax#mdc-syntax
+background: https://cover.sli.dev
+transition: slide-left
+mdc: true
 selectable: false
 codeCopy: false
 download: true
@@ -13,12 +13,11 @@ hideInToc: true
 highlighter: shiki
 lineNumbers: true
 
-#== Dravings https://sli.dev/guide/drawing
+#== Drawings https://sli.dev/guide/drawing
 drawings:
   persist: false
 
 #== Export Configuration
-# use export CLI options in camelCase format https://sli.dev/guide/exporting.html
 export:
   format: pdf
   timeout: 30000
@@ -42,102 +41,351 @@ info: |
 layout: default
 ---
 
-#  Obsah
+# Obsah
 
 <Toc :columns="2" minDepth="1" maxDepth="1"></Toc>
+
+---
+
+# Proč dědičnost?
+
+Bez dědičnosti se stejný kód opakuje v každé třídě — **duplicita je problém**.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+<div>
+
+**❌ Bez dědičnosti**
+
+```python {filename:'bez_dedicnosti.py'}
+class Student:
+    def __init__(self, jmeno, vek):
+        self.jmeno = jmeno   # duplicita
+        self.vek = vek       # duplicita
+
+    def predstav_se(self):   # duplicita
+        return f"Jsem {self.jmeno}."
+
+class Zamestnanec:
+    def __init__(self, jmeno, vek):
+        self.jmeno = jmeno   # duplicita
+        self.vek = vek       # duplicita
+
+    def predstav_se(self):   # duplicita
+        return f"Jsem {self.jmeno}."
+```
+
+</div>
+<div>
+
+**✅ S dědičností**
+
+```python {filename:'s_dedicnosti.py'}
+class Osoba:
+    def __init__(self, jmeno, vek):
+        self.jmeno = jmeno
+        self.vek = vek
+
+    def predstav_se(self):
+        return f"Jsem {self.jmeno}."
+
+
+class Student(Osoba):
+    pass   # zdědí vše od Osoby
+
+
+class Zamestnanec(Osoba):
+    pass   # zdědí vše od Osoby
+```
+
+</div>
+</div>
+
+---
+layout: two-cols-header
 ---
 
 # Dědičnost
 
+::left::
+
 - Dědičnost je základním prvkem objektově orientovaného programování
 - Umožňuje vytvářet nové třídy na základě již existujících
-- Nová třída může převzít vlastnosti a metody již existující třídy
+- Potomek **přebírá** atributy a metody rodiče
+- Potomek může atributy a metody **rozšiřovat** nebo **přepisovat**
+
+::right::
+
+```mermaid {theme: 'default', scale: 0.82}
+classDiagram
+    class Osoba {
+        +str jmeno
+        +int vek
+        +predstav_se()
+    }
+    class Student {
+        +str obor
+        +predstav_se()
+        +zmen_obor()
+    }
+    class Zamestnanec {
+        +str firma
+        +predstav_se()
+    }
+    Osoba <|-- Student : dědí
+    Osoba <|-- Zamestnanec : dědí
+```
+
+---
+
+# Terminologie
+
+| Pojem | Synonyma | Popis |
+|---|---|---|
+| **Rodičovská třída** | Základní třída, Předek, *Base class* | Třída, ze které se dědí |
+| **Potomkovská třída** | Odvozená třída, Podtřída, *Derived class* | Třída, která dědí |
+
+```python {filename:'priklad.py'}
+class Rodic:            # rodičovská třída (base class)
+    pass
+
+class Potomek(Rodic):  # potomkovská třída — dědí od Rodic
+    pass
+```
 
 ---
 
 # Syntaxe dědičnosti
 
-- Dědičnost se definuje v závorce za názvem třídy
-- V závorce se uvádí název třídy, ze které se dědí
-- Třída, ze které se dědí, se nazývá rodičovská třída (rodič)
-- Třída, která dědí, se nazývá potomkovská třída (potomek)
+- Název rodičovské třídy se uvádí **v závorce** za názvem třídy potomka
 
-```python
+```python {filename:'rodic.py'}
 class Rodic:
     def __init__(self, jmeno):
         self.jmeno = jmeno
-```
 
-```python
+    def pozdrav(self):
+        return f"Ahoj, jsem {self.jmeno}."
+```
+ 
+-
+
+```python {filename:'potomek.py'}
 class Potomek(Rodic):
     def __init__(self, jmeno, vek):
-        # Volání konstruktoru rodiče
-        super().__init__(jmeno)
+        super().__init__(jmeno)   # volání konstruktoru rodiče
         self.vek = vek
+```
+
+-
+
+```python {filename:'main.py'}
+p = Potomek("Anna", 20)
+print(p.pozdrav())   # Zdědeno od Rodic → "Ahoj, jsem Anna."
+print(p.vek)         # Vlastní atribut potomka → 20
 ```
 
 ---
 
-# Volání konstruktoru rodiče
+# Volání konstruktoru rodiče – `super()`
 
-- Konstruktor rodiče se volá pomocí funkce `super()`
-- Funkce `super()` vrací objekt rodiče
-- Pomocí `super().__init__()` voláme konstruktor rodiče
-- Tím inicializujeme vlastnosti rodiče
+- `super()` vrací odkaz na rodičovskou třídu
+- `super().__init__(...)` inicializuje atributy definované v rodiči
+- **Bez volání `super()` by atributy rodiče nebyly inicializovány!**
 
----
+<div class="grid grid-cols-2 gap-6 mt-2">
+<div>
 
-# Příklad dědičnosti
+**✅ Správně — s `super()`**
 
-```python
-class Rodic:
-    def __init__(self, jmeno):
-        self.jmeno = jmeno
-```
-
-```python
+```python {filename:'potomek.py'}
 class Potomek(Rodic):
     def __init__(self, jmeno, vek):
         super().__init__(jmeno)
+        # ✅ self.jmeno je inicializováno
         self.vek = vek
+
+p = Potomek("Anna", 20)
+print(p.jmeno)   # "Anna"
+print(p.vek)     # 20
 ```
 
-```python
-potomek = Potomek("Adam", 30)
-print(potomek.jmeno)
-print(potomek.vek)
+</div>
+<div>
+
+**❌ Špatně — bez `super()`**
+
+```python {filename:'potomek_spatne.py'}
+class Potomek(Rodic):
+    def __init__(self, jmeno, vek):
+        # ❌ self.jmeno není inicializováno!
+        self.vek = vek
+
+p = Potomek("Anna", 20)
+print(p.jmeno)   # AttributeError!
+print(p.vek)     # 20
 ```
 
+</div>
+</div>
+
+---
+
+# Modifikátory přístupu
+
+Python vyjadřuje přístupnost atributů **konvencí pojmenování**:
+
+| Zápis | Typ | Přístupnost |
+|---|---|---|
+| `self.jmeno` | **Veřejný** (public) | Přístupný odkudkoliv |
+| `self._jmeno` | **Chráněný** (protected) | V třídě a jejích potomcích |
+| `self.__jmeno` | **Soukromý** (private) | Pouze uvnitř dané třídy |
+
+
+```python {filename:'osoba.py'}
+class Osoba:
+    def __init__(self, jmeno, vek):
+        self.jmeno = jmeno               # public   — přístupný odkudkoliv
+        self._povolani = "nezaměstnaný"  # protected — přístup v třídě a potomcích
+        self.__vek = vek                 # private   — přístupný jen uvnitř třídy
+```
+
+```python {filename:'main.py'}
+o = Osoba("Karel", 30)
+print(o.jmeno)       # ✅ public — vždy funguje
+print(o._povolani)   # ⚠️ protected — funguje, ale porušuje konvenci
+print(o.__vek)       # ❌ AttributeError — soukromý, nelze přistoupit přímo
+```
+
+---
+
+# Gettery a settery přes modifikátory – `@property`
+
+- Soukromé atributy (`__`) je nutné číst a zapisovat přes **getter** a **setter**
+- Pythonický způsob: dekorátor `@property`
+- Zvenku vypadá jako přímý přístup k atributu, ale uvnitř umožňuje **validaci**
+
+```python {*|2-4|6-11|13-15|17-19}{maxHeight:'340px', filename:'osoba.py'}
+class Osoba:
+    @property
+    def vek(self):
+        return self.__vek              # getter — čte soukromý atribut
+
+    @vek.setter
+    def vek(self, novy_vek):
+        if novy_vek > 0:
+            self.__vek = novy_vek     # setter — zapíše po validaci
+        else:
+            raise ValueError("Věk musí být kladné číslo!")
+
+    @property
+    def povolani(self):
+        return self._povolani         # getter pro chráněný atribut
+
+    @povolani.setter
+    def povolani(self, hodnota):
+        self._povolani = hodnota
+```
+
+---
+
+# Gettery a settery
+
+```python {filename:'main.py'}
+o = Osoba("Karel", 30)
+print(o.vek)   # ✅ volá getter — vypadá jako atribut
+o.vek = 31     # ✅ volá setter — vypadá jako přiřazení
+o.vek = -5     # ❌ ValueError: Věk musí být kladné číslo!
+```
+
+---
+
+# Přepisování metod (Method Overriding)
+
+- Potomek může **přepsat** metodu rodiče — stejný název, jiné tělo
+- Původní metodu rodiče lze stále zavolat přes `super()`
+
+```python {filename:'osoba.py'}
+class Osoba:
+    def predstav_se(self):
+        return f"Ahoj, jsem {self.jmeno}."
+```
+
+```python {filename:'student.py'}
+class Student(Osoba):
+    def predstav_se(self):                 # přepisuje metodu rodiče
+        zaklad = super().predstav_se()     # nejprve zavolá metodu rodiče
+        return zaklad + f" Studuji {self.obor}."
+```
+
+```python {filename:'main.py'}
+o = Osoba("Karel", 30)
+s = Student("Anna", 20, "Informatika")
+
+print(o.predstav_se())   # "Ahoj, jsem Karel."
+print(s.predstav_se())   # "Ahoj, jsem Anna. Studuji Informatika."
+```
+
+---
+layout: two-cols-header
 ---
 
 # Polymorfismus
 
-- Polymorfismus je schopnost objektu měnit své chování na základě kontextu
-- Polymorfní objekty mohou mít stejné metody, ale chovat se odlišně
-- Například metoda `info()` může vracet různé informace
-- Polymorfismus zvyšuje flexibilitu a znovupoužitelnost kódu
 
 
-Například:
+- Polymorfismus = „mnoho forem"
+- Různé třídy mohou mít **stejně pojmenovanou metodu**, která se chová odlišně
+- Python automaticky volá **správnou verzi** metody podle skutečného typu objektu
 
-```python
-class Auto:
-    def info(self):
-        return "Auto"
+::left::
+
+```python {filename:'osoby.py'}
+class Osoba:
+    def predstav_se(self):
+        return f"Jsem osoba: {self.jmeno}."
+
+class Student(Osoba):
+    def predstav_se(self):
+        return f"Jsem student: {self.jmeno}, obor {self.obor}."
+
+class Zamestnanec(Osoba):
+    def predstav_se(self):
+        return f"Jsem zaměstnanec: {self.jmeno}, firma {self.firma}."
 ```
 
-```python
-class Motorka(Auto):
-    def info(self):
-        return "Motorka"
+::right::
+
+```python {filename:'main.py'}
+osoby = [
+    Osoba("Karel", 50),
+    Student("Anna", 20, "Informatika"),
+    Zamestnanec("Petr", 40, "TechCorp"),
+]
+
+for osoba in osoby:
+    print(osoba.predstav_se())   # Python volá správnou verzi automaticky!
 ```
 
-```python
-auto = Auto()
-motorka = Motorka()
-print(auto.info())
-print(motorka.info())
+---
+
+# `isinstance()` a `issubclass()`
+
+Pomocné funkce pro práci s typy a dědičností za běhu programu:
+
+```python {filename:'main.py'}
+student = Student("Anna", 20, "Informatika")
+
+# isinstance — zjistí, zda je objekt instancí dané třídy
+isinstance(student, Student)    # True  — přímá instance třídy Student
+isinstance(student, Osoba)      # True  — potomek je zároveň instancí předka!
+isinstance(student, int)        # False — není int
+
+# issubclass — zjistí vztah dědičnosti mezi třídami (nikoli objekty)
+issubclass(Student, Osoba)      # True  — Student dědí od Osoba
+issubclass(Osoba, Student)      # False — Osoba nedědí od Student
 ```
+
+> 💡 `isinstance()` je klíčový při polymorfismu — umožňuje reagovat na skutečný typ objektu, i když pracujeme s kolekcí různých potomků.
 
 ---
 layout: image-right
@@ -149,98 +397,141 @@ image: https://cover.sli.dev
 ---
 
 # Diagram
-```mermaid {theme: 'default', scale: 0.8}
+
+```mermaid {theme: 'default', scale: 0.72}
 classDiagram
     class Osoba {
-    +str jmeno
-    #str _povolani
-    -int __vek
-    +__init__(jmeno, vek)
-    +predstav_se()
-    +get_vek()
-    +set_vek(novy_vek)
-    +set_povolani(povolani)
-    +get_povolani()
+        +str jmeno
+        #str _povolani
+        -int __vek
+        +__init__(jmeno, vek)
+        +vek() int
+        +vek(novy_vek)
+        +povolani() str
+        +povolani(hodnota)
+        +predstav_se() str
     }
 
     class Student {
         +str obor
         +__init__(jmeno, vek, obor)
-        +predstav_se()
-        +zmen_obor(novy_obor)
+        +predstav_se() str
+        +zmen_obor(novy_obor) str
+    }
+
+    class Zamestnanec {
+        +str firma
+        +__init__(jmeno, vek, firma)
+        +predstav_se() str
     }
 
     Osoba <|-- Student
+    Osoba <|-- Zamestnanec
 ```
 
 ---
 
-# Kód
+# Kód – třída `Osoba`
 
-```python {*|1|2-5|7-8|10-25|28-32|34-40|7-8,34-36|43-52}{maxHeight:'400px'}
+```python {*|2-5|7-16|18-24|26-27}{maxHeight:'420px', filename:'osoba.py'}
 class Osoba:
     def __init__(self, jmeno, vek):
-        self.jmeno = jmeno
-        self._povolani = "nezaměstnaný"  # Chráněný atribut
-        self.__vek = vek  # Soukromý atribut
+        self.jmeno = jmeno                   # public
+        self._povolani = "nezaměstnaný"      # protected
+        self.__vek = vek                     # private
+
+    @property
+    def vek(self):
+        return self.__vek
+
+    @vek.setter
+    def vek(self, novy_vek):
+        if novy_vek > 0:
+            self.__vek = novy_vek
+        else:
+            raise ValueError("Věk musí být kladné číslo!")
+
+    @property
+    def povolani(self):
+        return self._povolani
+
+    @povolani.setter
+    def povolani(self, hodnota):
+        self._povolani = hodnota
 
     def predstav_se(self):
         return f"Ahoj, jmenuji se {self.jmeno} a je mi {self.__vek} let."
+```
 
-    def get_vek(self):
-        return self.__vek
+---
 
-    def set_vek(self, novy_vek):
-        if novy_vek > 0:
-            self.__vek = novy_vek
-            return f"Věk byl změněn na {self.__vek}."
-        else:
-            return "Věk musí být kladné číslo!"
+# Kód – třídy `Student` a `Zamestnanec`
 
-    def set_povolani(self, povolani):
-        self._povolani = povolani
-        return f"Povolání bylo nastaveno na {self._povolani}."
-
-    def get_povolani(self):
-        return self._povolani
-
-
+```python {*|1-12|15-22}{maxHeight:'400px', filename:'student_zamestnanec.py'}
 class Student(Osoba):
     def __init__(self, jmeno, vek, obor):
         super().__init__(jmeno, vek)
         self.obor = obor
-        self.set_povolani("student")
+        self.povolani = "student"          # setter z rodiče přes @property
 
     def predstav_se(self):
-        vystup = super().predstav_se()
-        return vystup + f" a studuji obor {self.obor}."
+        return super().predstav_se() + f" Studuji obor {self.obor}."
 
     def zmen_obor(self, novy_obor):
         self.obor = novy_obor
         return f"Nový obor je nyní {self.obor}."
 
 
-# Použití tříd
-student = Student("Lorenz", 20, "Informatika")
+class Zamestnanec(Osoba):
+    def __init__(self, jmeno, vek, firma):
+        super().__init__(jmeno, vek)
+        self.firma = firma
+        self.povolani = "zaměstnanec"      # setter z rodiče přes @property
 
-# Všechny metody nyní vrací řetězce, které můžeme vypsat pomocí print
+    def predstav_se(self):
+        return super().predstav_se() + f" Pracuji ve firmě {self.firma}."
+```
+
+---
+
+# Kód – použití a polymorfismus
+
+```python {*|1-2|5-7|10-12|15-17|20-21}{maxHeight:'380px', filename:'main.py'}
+student = Student("Anna", 20, "Informatika")
+zam = Zamestnanec("Petr", 35, "TechCorp")
+
+# getter a setter přes @property
+print(student.vek)      # 20  — getter
+student.vek = 21        # setter s validací
+# student.vek = -1      # ❌ ValueError: Věk musí být kladné číslo!
+
+# přepisování metod
 print(student.predstav_se())
-print("Věk:", student.get_vek())
-print(student.set_vek(21))
-print("Nový věk:", student.get_vek())
-print(student.zmen_obor("Matematika"))
-print("Povolání:", student.get_povolani())
+# → "Ahoj, jmenuji se Anna a je mi 21 let. Studuji obor Informatika."
+print(zam.predstav_se())
+# → "Ahoj, jmenuji se Petr a je mi 35 let. Pracuji ve firmě TechCorp."
+
+# polymorfismus — stejné volání, různé chování
+for o in [student, zam]:
+    print(type(o).__name__, "→", o.predstav_se())
+
+# isinstance — zjistí typ za běhu
+print(isinstance(student, Osoba))    # True — potomek je i instancí předka
+print(isinstance(student, Student))  # True
 ```
 
 ---
 
 # Shrnutí
 
-- - Dědičnost umožňuje znovupoužití kódu a rozšiřování funkcionality.
-- `super()` umožňuje volání metod rodičovské třídy.
-- Přepisování metod dovoluje upravit chování potomků.
-
-
+- **Dědičnost** eliminuje duplicitu kódu a umožňuje rozšiřovat existující třídy
+- Název rodičovské třídy se uvádí **v závorce** za názvem potomka
+- `super().__init__()` inicializuje atributy rodičovské třídy — bez něj chybí!
+- **Modifikátory přístupu** (`public`, `_protected`, `__private`) řídí viditelnost atributů
+- **`@property`** je pythonický způsob tvorby getterů a setterů s možností validace
+- **Přepisování metod** (method overriding) umožňuje změnit chování v potomkovi
+- **Polymorfismus** — různé třídy, stejné rozhraní, různé chování za běhu programu
+- **`isinstance()`** ověří, zda objekt patří do dané třídy nebo jejího předka
 
 ---
 src: '../../pages/thanku.md'
