@@ -298,32 +298,11 @@ o.vek = -5     # ❌ ValueError: Věk musí být kladné číslo!
 ```
 
 ---
+layout: image-right
+image: https://cover.sli.dev
+---
 
-# Přepisování metod (Method Overriding)
-
-- Potomek může **přepsat** metodu rodiče — stejný název, jiné tělo
-- Původní metodu rodiče lze stále zavolat přes `super()`
-
-```python {filename:'osoba.py'}
-class Osoba:
-    def predstav_se(self):
-        return f"Ahoj, jsem {self.jmeno}."
-```
-
-```python {filename:'student.py'}
-class Student(Osoba):
-    def predstav_se(self):                 # přepisuje metodu rodiče
-        zaklad = super().predstav_se()     # nejprve zavolá metodu rodiče
-        return zaklad + f" Studuji {self.obor}."
-```
-
-```python {filename:'main.py'}
-o = Osoba("Karel", 30)
-s = Student("Anna", 20, "Informatika")
-
-print(o.predstav_se())   # "Ahoj, jsem Karel."
-print(s.predstav_se())   # "Ahoj, jsem Anna. Studuji Informatika."
-```
+# Polymorfismus
 
 ---
 layout: two-cols-header
@@ -331,7 +310,9 @@ layout: two-cols-header
 
 # Polymorfismus
 
-
+> Polymorfismus je obecný OOP princip, který znamená „mnoho podob".
+> Umožňuje objektům se chovat různě na základě jejich typu,
+> přitom se používá stejný interface (stejné jméno metody).
 
 - Polymorfismus = „mnoho forem"
 - Různé třídy mohou mít **stejně pojmenovanou metodu**, která se chová odlišně
@@ -365,6 +346,72 @@ osoby = [
 for osoba in osoby:
     print(osoba.predstav_se())   # Python volá správnou verzi automaticky!
 ```
+
+---
+
+# Přepisování metod (Method Overriding)
+
+> Overriding je konkrétní mechanismus, jak polymorfismus dosáhnout. Potomek definuje metodu se stejným jménem a signaturou jako rodič, čímž ji "přepíše".
+
+- Potomek může **přepsat** metodu rodiče — stejný název, jiné tělo
+- Původní metodu rodiče lze stále zavolat přes `super()`
+
+```python {filename:'osoba.py'}
+class Osoba:
+    def predstav_se(self):
+        return f"Ahoj, jsem {self.jmeno}."
+```
+
+```python {filename:'student.py'}
+class Student(Osoba):
+    def predstav_se(self):                 # přepisuje metodu rodiče
+        zaklad = super().predstav_se()     # nejprve zavolá metodu rodiče
+        return zaklad + f" Studuji {self.obor}."
+```
+
+```python {filename:'main.py'}
+o = Osoba("Karel", 30)
+s = Student("Anna", 20, "Informatika")
+
+print(o.predstav_se())   # "Ahoj, jsem Karel."
+print(s.predstav_se())   # "Ahoj, jsem Anna. Studuji Informatika."
+```
+
+---
+
+# Příklad overridingu
+
+```python
+# Nadtřída - definuje interface
+class Zvire:
+    def zvi(self):
+        return "Nějaký zvuk"
+
+# Potomci - přepisují metodu
+class Pes(Zvire):
+    def zvi(self):
+        return "Haf haf!"
+
+class Kocka(Zvire):
+    def zvi(self):
+        return "Mňau!"
+
+# Polymorfismus v akci
+zvira = [Pes(), Kocka(), Pes()]
+for zvire in zvira:
+    print(zvire.zvi())  # Každý typ se chová jinak!
+# Výstup:
+# Haf haf!
+# Mňau!
+# Haf haf!
+```
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Pomocné funkce
 
 ---
 
