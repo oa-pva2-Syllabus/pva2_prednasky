@@ -295,6 +295,7 @@ auto1 = Auto()
 - Všechny instance jsou uloženy v operační paměti – pozor na disponibilní zdroje.
 
 <v-click>
+
 ```python
 #objekt = Třída()
 pes = Pes()
@@ -303,6 +304,7 @@ druhyPes = Pes()
 
 kolie = Pes()
 ```
+
 </v-click>
 
 ---
