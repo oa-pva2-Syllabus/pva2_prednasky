@@ -1,5 +1,7 @@
 # Seznam přednášek
 
+> **⚠️ Tento repozitář je archivován.** Přednášky PVA2 se dál udržují ve sloučeném monorepu [`oa-syllabus/prednasky`](https://github.com/oa-syllabus/prednasky) — aktuální verze je na [oa-syllabus.github.io/prednasky/pva2/](https://oa-syllabus.github.io/prednasky/pva2/). Tento repozitář se dál needituje.
+
 | # | Přednáška | PDF |
 |---:|-----------|-----|
 | 01 | [Úvod do Pythonu](https://oa-pva2-syllabus.github.io/pva2_prednasky/01_uvod_do_python/) | [PDF](https://oa-pva2-syllabus.github.io/pva2_prednasky/01_uvod_do_python/01_uvod_do_python.pdf) |
